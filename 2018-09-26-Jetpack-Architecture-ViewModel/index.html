@@ -241,7 +241,7 @@
 
     
         <meta property="article:published_time" content="Wed Sep 26 2018 20:40:11 GMT+0800">
-        <meta property="article:modified_time" content="Thu Sep 27 2018 22:55:37 GMT+0800">
+        <meta property="article:modified_time" content="Thu Sep 27 2018 23:08:03 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -264,7 +264,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018-09-26-Jetpack-Architecture-ViewModel/index.html",
     "headline": "Android Jetpack Architecture之ViewModel",
     "datePublished": "Wed Sep 26 2018 20:40:11 GMT+0800",
-    "dateModified": "Thu Sep 27 2018 22:55:37 GMT+0800",
+    "dateModified": "Thu Sep 27 2018 23:08:03 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "ncmon",
@@ -485,77 +485,38 @@
     
         <p><br>&ensp;&ensp;Jetpack已经出了很久很久了，近几年的GDD几乎每次都会介绍新的组件，说来惭愧，一直没有好好学习，看近年的Google 的很多Demo中其实都有所体现，之前都是大概的了解了一遍。最近决定，好好梳理一遍，既学习其用法，也尝试学习下其设计思想。也是时候该补充一下了。进入正题–ViewModel<br><br><br>&ensp;&ensp;首先都是看官方的例子，<a href="https://developer.android.google.cn/topic/libraries/architecture/viewmodel" title="Jetpack-ViewModel" target="_blank" rel="external">ViewModel</a>官方的的例子是会和另一个架构库LiveData写在一起，很多的博客也是照官方的例子来说明，开始接触时甚至给了我一种假象：ViewModel都是和LiveData一起使用的。后来阅读才了解，ViewModel和LiveData职责分工还是很明显的，使用LiveData Demo主要使用其observe功能，LiveDate的使用及原理之后再分析，甚至在appcompat-v7:27.1.1中直接单独集成了ViewModel.所以，故为排除干扰，今天不会使用官方的主流Demo用法，先来看ViewModel。<br><br><br>&ensp;&ensp;Android的UI控制器（Activity和Fragment）从创建到销毁拥有自己完整的生命周期，当系统配置发生改变时（(Configuration changes)），系统就会销毁Activity和与之关联的Fragment然后再次重建<font color="#FFA500">（可通过在AndroidManifast.xml中配置android:configChanges修改某些行为，这里不讨论）</font>,那么存储在当前UI中的临时数据也会被清空，例如，登陆输入框，输入账号或密码后旋转屏幕，视图被重建，输入过的数据也清空了，这无疑是一种不友好的用户体验。对于少量的可序列化数据可以使用onSaveInstanceState()方法保存然后在onCreate()方法中重新恢复，正如所说onSaveInstanceState有一定的局限性，大量的数据缓存则可以使用<a href="https://developer.android.com/reference/android/support/v4/app/Fragment" title="Fragment-reference" target="_blank" rel="external">Fragment</a>.setRetainInstance(true)来保存数据。ViewModel也是提供了相同的功能，用来存储和管理与UI相关的数据，允许数据在系统配置变化后存活，其内部原理其实也是使用Fragment.setRetainInstance(true)来实现，这个后面会分析<br></p>
 <p><br>首先先看下使用方式，先上效果图<br><br><img src="http://omv6ufghj.bkt.clouddn.com/device-2018-09-27-224647_20180927224809.gif" alt="ViewMode Sample"></p>
-<pre><code>public class MyViewModel extends ViewModel {
-    String name;
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
-    @Override
-    protected void onCleared() {
-        super.onCleared();
-        name = null;
-    }
+<p><pre><br>```Java<br>public class MyViewModel extends ViewModel {<br>       String name;<br>    public String getName(){<br>        return name;<br>    }</pre></p>
+<pre><code>public void setName(String name){
+    this.name = name;
 }
-</code></pre><p>&nbsp;</p>
-<pre><code>public class ViewModelActivity extends AppCompatActivity implements View.OnClickListener {
-    private static final String TAG = &quot;ViewModelActivity&quot;;
-    TextView textView;
-    private MyViewModel myViewModel;
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_viewmodel);
-        textView = findViewById(R.id.textView);
-        textView.setOnClickListener(this);
-        ViewModelProvider.Factory factory = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication());
-        ViewModelProvider provider = new ViewModelProvider(this, factory);//这里的this是ViewModelStoreOwner接口，在appcompat-v7:27.1.1 中AppCompatActivity已经默认被实现
-        myViewModel = provider.get(MyViewModel.class);
-        Log.e(TAG, &quot;onCreate: &quot; + myViewModel.getName() );
-        if (myViewModel.getName() != null) {
-            textView.setText(myViewModel.getName());
-        }
-    }
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.textView:
-                myViewModel.setName(&quot;MyViewModel Test&quot;);
-                textView.setText(myViewModel.getName());
-                break;
-        }
-    }
+
+@Override
+protected void onCleared() {
+    super.onCleared();
+    name = null;
 }
-</code></pre><p>&nbsp;</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;android.support.constraint.ConstraintLayout
-    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;&gt;
+}
+</code></pre><p><br>&nbsp;</p>
+<p><pre><br>``` Java<br>public class ViewModelActivity extends AppCompatActivity implements View.OnClickListener {<br>    private static final String TAG = “ViewModelActivity”;<br>    TextView textView;<br>    private MyViewModel myViewModel;<br>    @Override<br>    protected void onCreate(@Nullable Bundle savedInstanceState) {<br>        super.onCreate(savedInstanceState);<br>        setContentView(R.layout.activity_viewmodel);<br>        textView = findViewById(R.id.textView);<br>        textView.setOnClickListener(this);<br>        ViewModelProvider.Factory factory = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication());<br>        ViewModelProvider provider = new ViewModelProvider(this, factory);<br>        myViewModel = provider.get(MyViewModel.class);<br>        Log.e(TAG, “onCreate: “ + myViewModel.getName() );<br>        if (myViewModel.getName() != null) {<br>            textView.setText(myViewModel.getName());<br>        }<br>    }<br>    @Override<br>    public void onClick(View v) {<br>        switch (v.getId()){<br>            case R.id.textView:<br>                myViewModel.setName(“MyViewModel Test”);<br>                textView.setText(myViewModel.getName());<br>                break;<br>        }<br>    }<br>}<br></pre><br>&nbsp;</p>
+<p><pre><br>```xml<br>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</pre></p>
+<android.support.constraint.constraintlayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent">
 
 
-    &lt;TextView
-        android:id=&quot;@+id/textView&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_marginStart=&quot;8dp&quot;
-        android:layout_marginTop=&quot;8dp&quot;
-        android:layout_marginEnd=&quot;8dp&quot;
-        android:layout_marginBottom=&quot;8dp&quot;
-        android:text=&quot;default&quot;
-        app:layout_constraintBottom_toBottomOf=&quot;parent&quot;
-        app:layout_constraintEnd_toEndOf=&quot;parent&quot;
-        app:layout_constraintStart_toStartOf=&quot;parent&quot;
-        app:layout_constraintTop_toTopOf=&quot;parent&quot; /&gt;
-
-&lt;/android.support.constraint.ConstraintLayout&gt;
-</code></pre><p><br>非常简单的一个例子，这就是ViewModel最简单的使用了，就是TextView中显示ViewModel的数据。ViewModel需要由ViewModelProvider.get(Class<t>)来取得，旋转屏幕销毁后，之前改变的数据还在。<br></t></p>
+<pre><code>&lt;TextView
+    android:id=&quot;@+id/textView&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_marginStart=&quot;8dp&quot;
+    android:layout_marginTop=&quot;8dp&quot;
+    android:layout_marginEnd=&quot;8dp&quot;
+    android:layout_marginBottom=&quot;8dp&quot;
+    android:text=&quot;default&quot;
+    app:layout_constraintBottom_toBottomOf=&quot;parent&quot;
+    app:layout_constraintEnd_toEndOf=&quot;parent&quot;
+    app:layout_constraintStart_toStartOf=&quot;parent&quot;
+    app:layout_constraintTop_toTopOf=&quot;parent&quot; /&gt;
+</code></pre><p></p></android.support.constraint.constraintlayout><p></p>
+<p><br><br>非常简单的一个例子，这就是ViewModel最简单的使用了，就是TextView中显示ViewModel的数据。ViewModel需要由ViewModelProvider.get(Class<t>)来取得，旋转屏幕销毁后，之前改变的数据还在。<br></t></p>
 
         
     
