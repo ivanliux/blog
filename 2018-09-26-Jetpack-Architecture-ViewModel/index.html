@@ -100,18 +100,18 @@
       
     </div>
     <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
       <ul id="menu" role="menubar" aria-hidden="false">
         
-        <li role="menuitem"><a href="/">首页</a></li>
+        <li role="menuitem"><a href="/">Home</a></li>
         
-        <li role="menuitem"><a href="/archives/">归档</a></li>
+        <li role="menuitem"><a href="/archives/">Archives</a></li>
         
-        <li role="menuitem"><a href="/categories/">分类</a></li>
+        <li role="menuitem"><a href="/categories/">Categories</a></li>
         
-        <li role="menuitem"><a href="/tags/">标签</a></li>
+        <li role="menuitem"><a href="/tags/">Tags</a></li>
         
-        <li role="menuitem"><a href="/about/">关于</a></li>
+        <li role="menuitem"><a href="/about/">About</a></li>
         
       </ul>
     </nav>
@@ -159,9 +159,7 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p><br>&ensp;&ensp;Jetpack已经出了很久很久了，近几年的GDD几乎每次都会介绍新的组件，说来惭愧，一直没有好好学习，看近年的Google 的很多Demo中其实都有所体现，之前都是大概的了解了一遍。最近决定，好好梳理一遍，既学习其用法，也尝试学习下其设计思想。也是时候该补充一下了。进入正题–ViewModel<br><br><br>&ensp;&ensp;首先都是看官方的例子，<a href="https://developer.android.google.cn/topic/libraries/architecture/viewmodel" title="Jetpack-ViewModel" target="_blank" rel="external">ViewModel</a>官方的的例子是会和另一个架构库LiveData写在一起，很多的博客也是照官方的例子来说明，开始接触时甚至给了我一种假象：ViewModel都是和LiveData一起使用的。后来阅读才了解，ViewModel和LiveData职责分工还是很明显的，使用LiveData Demo主要使用其observe功能，LiveDate的使用及原理之后再分析，甚至在appcompat-v7:27.1.1中直接单独集成了ViewModel.所以，故为排除干扰，今天不会使用官方的主流Demo用法，先来看ViewModel。<br><br><br>&ensp;&ensp;Android的UI控制器（Activity和Fragment）从创建到销毁拥有自己完整的生命周期，当系统配置发生改变时（(Configuration changes)），系统就会销毁Activity和与之关联的Fragment然后再次重建<font color="#FFA500">（可通过在AndroidManifast.xml中配置android:configChanges修改某些行为，这里不讨论）</font>,那么存储在当前UI中的临时数据也会被清空，例如，登陆输入框，输入账号或密码后旋转屏幕，视图被重建，输入过的数据也清空了，这无疑是一种不友好的用户体验。对于少量的可序列化数据可以使用onSaveInstanceState()方法保存然后在onCreate()方法中重新恢复，正如所说onSaveInstanceState对于大量的数据缓存有一定的局限性，大量的数据缓存则可以使用<a href="https://developer.android.com/reference/android/support/v4/app/Fragment" title="Fragment-reference" target="_blank" rel="external">Fragment</a>.setRetainInstance(true)来保存数据。ViewModel也是提供了相同的功能，用来存储和管理与UI相关的数据，允许数据在系统配置变化后存活，我们一起看一下这个ViewModel的缓存是怎么实现的呢？<br></p>
-<p><br>首先先看下使用方式，先上效果图<br><br><img src="http://omv6ufghj.bkt.clouddn.com/device-2018-09-27-224647_20180927224809.gif =200x" alt="ViewMode Sample"><br><figure class="hljs highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyViewModel</span> <span class="keyword">extends</span> <span class="title">ViewModel</span> </span>&#123;</div><div class="line">   	String name;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>&#123;</div><div class="line">    	<span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCleared</span><span class="params">()</span> </span>&#123;</div><div class="line">    	<span class="keyword">super</span>.onCleared();</div><div class="line">    	name = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
+      <p><br>&ensp;&ensp;Jetpack已经出了很久很久了，近几年的GDD几乎每次都会介绍新的组件，说来惭愧，一直没有好好学习，看近年的Google 的很多Demo中其实都有所体现，之前都是大概的了解了一遍。最近决定，好好梳理一遍，既学习其用法，也尝试学习下其设计思想。也是时候该补充一下了。进入正题–ViewModel<br><br><br>&ensp;&ensp;首先都是看官方的例子，<a href="https://developer.android.google.cn/topic/libraries/architecture/viewmodel" title="Jetpack-ViewModel" target="_blank" rel="external">ViewModel</a>官方的的例子是会和另一个架构库LiveData写在一起，很多的博客也是照官方的例子来说明，开始接触时甚至给了我一种假象：ViewModel都是和LiveData一起使用的。后来阅读才了解，ViewModel和LiveData职责分工还是很明显的，使用LiveData Demo主要使用其observe功能，LiveDate的使用及原理之后再分析，甚至在appcompat-v7:27.1.1中直接单独集成了ViewModel.所以，故为排除干扰，今天不会使用官方的主流Demo用法，先来看ViewModel。<br><br><br>&ensp;&ensp;Android的UI控制器（Activity和Fragment）从创建到销毁拥有自己完整的生命周期，当系统配置发生改变时（(Configuration changes)），系统就会销毁Activity和与之关联的Fragment然后再次重建<font color="#FFA500">（可通过在AndroidManifast.xml中配置android:configChanges修改某些行为，这里不讨论）</font>,那么存储在当前UI中的临时数据也会被清空，例如，登陆输入框，输入账号或密码后旋转屏幕，视图被重建，输入过的数据也清空了，这无疑是一种不友好的用户体验。对于少量的可序列化数据可以使用onSaveInstanceState()方法保存然后在onCreate()方法中重新恢复，正如所说onSaveInstanceState对于大量的数据缓存有一定的局限性，大量的数据缓存则可以使用<a href="https://developer.android.com/reference/android/support/v4/app/Fragment" title="Fragment-reference" target="_blank" rel="external">Fragment</a>.setRetainInstance(true)来保存数据。ViewModel也是提供了相同的功能，用来存储和管理与UI相关的数据，允许数据在系统配置变化后存活，我们一起看一下这个ViewModel的缓存是怎么实现的呢？<br><br><a id="more"></a><br><br>首先先看下使用方式，先上效果图<br><br><img src="http://omv6ufghj.bkt.clouddn.com/device-2018-09-27-224647_20180927224809.gif" width="200" height="100" div="" align="right"><br><figure class="hljs highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyViewModel</span> <span class="keyword">extends</span> <span class="title">ViewModel</span> </span>&#123;</div><div class="line">   	String name;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>&#123;</div><div class="line">    	<span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCleared</span><span class="params">()</span> </span>&#123;</div><div class="line">    	<span class="keyword">super</span>.onCleared();</div><div class="line">    	name = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 <p>&nbsp;<br><figure class="hljs highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewModelActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG = <span class="string">"ViewModelActivity"</span>;</div><div class="line">    TextView textView;</div><div class="line">    <span class="keyword">private</span> MyViewModel myViewModel;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_viewmodel);</div><div class="line">        textView = findViewById(R.id.textView);</div><div class="line">        textView.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        ViewModelProvider.Factory factory = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication());</div><div class="line">	<span class="comment">/*</span></div><div class="line">	*这里的this是ViewModelStoreOwner接口在appcompat-v7:27.1.1支持库中AppCompatActivity已经实现了，		</div><div class="line">	*如果是较低版本，需要更新支持包或者参考其实现对本来继承的Activity做对应实现。</div><div class="line">	*/</div><div class="line">        ViewModelProvider provider = <span class="keyword">new</span> ViewModelProvider(<span class="keyword">this</span>, factory);<span class="comment">//</span></div><div class="line">        myViewModel = provider.get(MyViewModel.class);</div><div class="line">        Log.e(TAG, <span class="string">"onCreate: "</span> + myViewModel.getName() );</div><div class="line">        <span class="keyword">if</span> (myViewModel.getName() != <span class="keyword">null</span>) &#123;</div><div class="line">            textView.setText(myViewModel.getName());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (v.getId())&#123;</div><div class="line">            <span class="keyword">case</span> R.id.textView:</div><div class="line">                myViewModel.setName(<span class="string">"MyViewModel Test"</span>);</div><div class="line">                textView.setText(myViewModel.getName());</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>&nbsp;<br><figure class="hljs highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.constraint.ConstraintLayout</span></span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/textView"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_marginStart</span>=<span class="string">"8dp"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"8dp"</span></div><div class="line">        <span class="attr">android:layout_marginEnd</span>=<span class="string">"8dp"</span></div><div class="line">        <span class="attr">android:layout_marginBottom</span>=<span class="string">"8dp"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"default"</span></div><div class="line">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">"parent"</span></div><div class="line">        <span class="attr">app:layout_constraintEnd_toEndOf</span>=<span class="string">"parent"</span></div><div class="line">        <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">"parent"</span></div><div class="line">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">"parent"</span> /&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">android.support.constraint.ConstraintLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>非常简单的一个例子，这就是ViewModel最简单的使用了，就是TextView中显示ViewModel的数据。ViewModel需要由ViewModelProvider.get(Class<t>)来取得，旋转屏幕销毁后，之前改变的数据还在。<br>接下来就是进入主题分析下ViewModel到底是怎么实现的呢？<br>带着问题看源码：  </t></p>
@@ -239,7 +237,7 @@
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -254,7 +252,7 @@
   <div class="site-count">
     
     <div class="archives-count">
-      <div class="site-count-title">归档</div>
+      <div class="site-count-title">Archives</div>
       <div><a href="/archives/">5</a></div>
     </div>
     
@@ -263,7 +261,7 @@
     <span class="site-count-divider divider">|</span>
     
     <div class="categories-count">
-      <div class="site-count-title">分类</div>
+      <div class="site-count-title">Categories</div>
       <div><a href="/categories/">2</a></div>
     </div>
     
@@ -272,7 +270,7 @@
     <span class="site-count-divider divider">|</span>
     
     <div class="tags-count">
-      <div class="site-count-title">标签</div>
+      <div class="site-count-title">Tags</div>
       <div><a href="/tags/">6</a></div>
     </div>
     
@@ -295,7 +293,7 @@
     
     <hr>
     <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <div><i class="far fa-address-card"></i>Social Links</p></div>
       <ul>
         
         <li><i class="fas fa-envelope"></i><a href="mailto:youremail@youremailhost" target="_blank">E-Mail</a></li>
@@ -310,7 +308,7 @@
     
     <hr>
     <div class="blogroll sidebar-item">
-      <div><i class="fas fa-link"></i>友情链接</div>
+      <div><i class="fas fa-link"></i>Blogroll</div>
       <ul>
         
         <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
@@ -334,7 +332,7 @@
 <footer id="footer" class="footer" style="background: #33363b;">
   <div class="container">
     <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
     </div>
     <div class="footer-container">
       <div class="footer-left">
@@ -343,7 +341,7 @@
         </div>
         
         <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
         </div>
         
       </div>
@@ -354,7 +352,7 @@
           
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>
