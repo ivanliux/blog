@@ -1,90 +1,389 @@
-{% extends "_layout.njk" %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="ncnom's blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
-{% block css %}
-<link rel="stylesheet" type="text/css" href="{{ url_for("css/page.css") }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for("css/post.css") }}">
-{% endblock %}
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>Ubuntu搭建Nginx图片服务器 | ncnom's blog</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">ncnom's blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">Home</a></li>
+        
+        <li role="menuitem"><a href="/archives/">Archives</a></li>
+        
+        <li role="menuitem"><a href="/categories/">Categories</a></li>
+        
+        <li role="menuitem"><a href="/tags/">Tags</a></li>
+        
+        <li role="menuitem"><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
 
-{% block title %}{{ page.title }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
-{% block content %}
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
 <div id="post" class="page">
-  {% set post = page %}
-  <article class="article post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(page.path) }}">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018-01-11-build-an-image-server/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="{{ config.author }}">
-       <meta itemprop="description" content="{{ config.description }}">
-       <meta itemprop="image" content="{{ url_for(theme.avatar) }}">
+       <meta itemprop="name" content="ncmon">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/mine.png">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="{{ config.title }}">
+       <meta itemprop="name" content="ncnom's blog">
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+      <h1 class="post-title" itemprop="name headline">Ubuntu搭建Nginx图片服务器</h1>
       <div class="post-meta">
-        {% if page.date %}
+        
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, config.date_format) }} {{ time(post.date, config.time_format) }}</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-01-11T20:40:11+08:00">2018-01-11 20:40:11</time></span>
         </span>
-        {% endif %}
-        {% if page.categories and page.categories.toArray().length %}
-        {% if page.date %}
+        
+        
+        
         <span class="post-meta-divider divider">|</span>
-        {% endif %}
+        
         <span class="post-categories">
-          {# About `-`: https://mozilla.github.io/nunjucks/cn/templating.html#part-861ece9d8e5ce60c #}
-          {% for cat in page.categories.toArray() -%}
-          {% if loop.first %}<i class="far fa-folder-open"></i>{% else %}<i class="fas fa-angle-right"></i>{% endif %}<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
-          {%- endfor %}
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术栈/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a></span>
         </span>
-        {% endif %}
-        {% if page.comment !== false and theme.comment.enable %}
-        {% if theme.comment.disqus_shortname %}
-        {% if page.categories or page.date %}
-        <span class="post-meta-divider divider">|</span>
-        {% endif %}
-        <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="{{ url_for(page.path) }}#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="{{ page.path }}" itemprop="commentCount"></span></a></span>
-        </span>
-        {% endif %}
-        {% endif %}
+        
+        
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      {{ page.content }}
+      <p>也许算作是建站以来的第一篇真正意义上的总结博客。  </p>
+<p>首先感谢开源本主题的viosey同学和辛苦维护本主题的neoFelhz同学，对此主题极为喜欢。</p>
+<p>新发现了当前的这个Meterial主题后发现居然有一个Gallery模板可以展示照片，平时的博客使用图片需要存放在一个位置上，平时也有一些业余的摄影爱好需要刚好可以存放，当然可以使用如之前使用过的七牛云等云对象存储平台存储使用，我这里也是刚好有个云服务器可以做存储就想着自己搭建一个图片服务器方便管理，也刚好能学习一下服务器方面的一些知识，经多次尝试，故总结一下,话不多说，开始行动.</p>
+<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><p>Ubuntu版本Ubuntu 16.04.3</p>
+<h1 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h1><p>首先是准备编译Nginx的前期准备工作  </p>
+<h2 id="先更新一下源"><a href="#先更新一下源" class="headerlink" title="先更新一下源"></a>先更新一下源</h2><pre><code>&gt; apt-get update
+</code></pre><h2 id="安装gcc-g-依赖库"><a href="#安装gcc-g-依赖库" class="headerlink" title="安装gcc g++依赖库"></a>安装gcc g++依赖库</h2><pre><code>&gt; apt-get install build-essential
+&gt; apt-get install libtool
+</code></pre><h2 id="安装prce依赖库"><a href="#安装prce依赖库" class="headerlink" title="安装prce依赖库"></a>安装prce依赖库</h2><pre><code>&gt; apt-get install libpcre3 libpcre3-dev
+</code></pre><h2 id="安装-zlib依赖库"><a href="#安装-zlib依赖库" class="headerlink" title="安装 zlib依赖库"></a>安装 zlib依赖库</h2><pre><code>&gt; apt-get install zlib1g-dev
+</code></pre><h2 id="安装-ssl依赖库"><a href="#安装-ssl依赖库" class="headerlink" title="安装 ssl依赖库"></a>安装 ssl依赖库</h2><pre><code>&gt; apt-get install openssl
+</code></pre><h2 id="编译Nginx"><a href="#编译Nginx" class="headerlink" title="编译Nginx"></a>编译Nginx</h2><p>下载<a href="http://nginx.org/en/download.html" target="_blank" rel="external">Nginx</a>有对应的版本，我这里下载是当前的最新版本1.13.8</p>
+<pre><code>&gt; #解压下载下来的压缩包
+&gt; tar -zxvf nginx-1.13.8.tar.gz
+&gt; #进入解压目录
+&gt; cd nginx-1.13.8
+&gt; #配置并生成makefile
+&gt; ./configure --prefix=/usr/local/nginx 
+&gt; #编译
+&gt; make
+&gt; #安装
+&gt; make install
+&gt; #启动Nginx
+&gt; /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+</code></pre><p>此时Nginx就安装完成了，会使用默认的80端口启动，如果有启动apache2服务的这里会用冲突，这里不是重点，可查询解决，启动完成可直接通过服务器ip或者云解析的域名查看默认网页  </p>
+<p>默认的网页长这个样子<br><img src="http://omv6ufghj.bkt.clouddn.com/image6.png" alt="Nginx-default-index"></p>
+<h1 id="安装与配置vsftpd"><a href="#安装与配置vsftpd" class="headerlink" title="安装与配置vsftpd"></a>安装与配置vsftpd</h1><h2 id="安装vsftpd"><a href="#安装vsftpd" class="headerlink" title="安装vsftpd"></a>安装vsftpd</h2><pre><code>&gt; apt-get install vsftpd
+</code></pre><h2 id="启动vsftpd服务"><a href="#启动vsftpd服务" class="headerlink" title="启动vsftpd服务"></a>启动vsftpd服务</h2><pre><code>&gt;service vsftpd start
+</code></pre><h2 id="新建ftpuser目录作为ftp主目录-（ftpuser为目录名，随个人喜好创建）"><a href="#新建ftpuser目录作为ftp主目录-（ftpuser为目录名，随个人喜好创建）" class="headerlink" title="新建ftpuser目录作为ftp主目录 （ftpuser为目录名，随个人喜好创建）"></a>新建ftpuser目录作为ftp主目录 （ftpuser为目录名，随个人喜好创建）</h2><pre><code>&gt;mkdir /home/ftpuser
+</code></pre><h2 id="新建ftpuser用户指定用户主目录和设置用户密码-（ftpuser为用户名，随个人喜好创建）"><a href="#新建ftpuser用户指定用户主目录和设置用户密码-（ftpuser为用户名，随个人喜好创建）" class="headerlink" title="新建ftpuser用户指定用户主目录和设置用户密码 （ftpuser为用户名，随个人喜好创建）"></a>新建ftpuser用户指定用户主目录和设置用户密码 （ftpuser为用户名，随个人喜好创建）</h2><pre><code>&gt;useradd -d /home/ftpuser -s /bin/bash ftpuser
+&gt;passwd ftpuser
+</code></pre><h2 id="制定用户组"><a href="#制定用户组" class="headerlink" title="制定用户组"></a>制定用户组</h2><pre><code>&gt;chown ftpuser:ftpuser /home/ftpuser
+</code></pre><h2 id="新建文件-etc-vsftpd-user-list，用于存放允许访问ftp的用户"><a href="#新建文件-etc-vsftpd-user-list，用于存放允许访问ftp的用户" class="headerlink" title="新建文件/etc/vsftpd.user_list，用于存放允许访问ftp的用户"></a>新建文件/etc/vsftpd.user_list，用于存放允许访问ftp的用户</h2><pre><code>&gt;vim /etc/vsftpd.user_list
+</code></pre><p><img src="http://omv6ufghj.bkt.clouddn.com/image7.png" alt="ftp-user_list"></p>
+<h2 id="编辑vsftpd配置文件"><a href="#编辑vsftpd配置文件" class="headerlink" title="编辑vsftpd配置文件"></a>编辑vsftpd配置文件</h2><pre><code>&gt;vim /etc/vsftpd.conf
+做如下修改：   
+　　打开注释 write_enable=YES   
+　　添加信息 userlist_file=/etc/vsftpd.user_list   
+　　添加信息 userlist_enable=YES   
+　　添加信息 userlist_deny=NO 
+　　修改完成后保存退出。
+</code></pre><h2 id="重启vsftpd服务"><a href="#重启vsftpd服务" class="headerlink" title="重启vsftpd服务"></a>重启vsftpd服务</h2><pre><code>&gt;service vsftpd restart
+</code></pre><p>这是可以使用filezilla等ftp软件使用刚刚新建的用户名和密码访问测试是否成功</p>
+<p>OK，准备工作完成开始上传图片，开始正式图片服务器工作</p>
+<h2 id="创建存储图片的根目录-（在ftpuser目录下-我这里使用www-images）"><a href="#创建存储图片的根目录-（在ftpuser目录下-我这里使用www-images）" class="headerlink" title="创建存储图片的根目录 （在ftpuser目录下,我这里使用www/images）"></a>创建存储图片的根目录 （在ftpuser目录下,我这里使用www/images）</h2><pre><code>&gt;cd /home/ftpuser
+&gt;mkdir -p www/images
+</code></pre><h2 id="在nginx目录下创建images目录"><a href="#在nginx目录下创建images目录" class="headerlink" title="在nginx目录下创建images目录"></a>在nginx目录下创建images目录</h2><pre><code>&gt;mkdir /usr/local/nginx/html/images
+</code></pre><h2 id="修改nginx-conf-nginx-conf在默认的server里再添加一个location并指定实际路径"><a href="#修改nginx-conf-nginx-conf在默认的server里再添加一个location并指定实际路径" class="headerlink" title="修改nginx/conf/nginx.conf在默认的server里再添加一个location并指定实际路径:"></a>修改nginx/conf/nginx.conf在默认的server里再添加一个location并指定实际路径:</h2><pre><code>location /images/ {
+    root  /home/ftpuser/www/;
+    autoindex on;
+}  
+</code></pre><p><img src="http://omv6ufghj.bkt.clouddn.com/image8.png" alt="images_nginx_conf"></p>
+<h2 id="修改用户访问权限"><a href="#修改用户访问权限" class="headerlink" title="修改用户访问权限"></a>修改用户访问权限</h2><pre><code>&gt;chmod 755 /home/ftpuser/www/images
+</code></pre><p>使用filezilla 等ftp工具使用ftpuser用户登录即可上传图片</p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p><img src="http://omv6ufghj.bkt.clouddn.com/image9.png" alt="ftp_upload_test"><br>送上一张最近的长安街慢门效果照片<em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em>。大功告成！ 撒花！<br><img src="http://omv6ufghj.bkt.clouddn.com/image10.png" alt="image_test_result"></p>
+
     </main>
     <footer class="post-footer">
-      {% if page.tags and page.tags.toArray().length %}
+      
       <div class="post-tags">
-        {% for tag in page.tags.toArray() %}
-        <a class="post-tag button" href="{{ url_for(tag.path) }}" rel="tag"><i class="fas fa-tags"></i>{{ tag.name }}</a>
-        {% endfor %}
+        
+        <a class="post-tag button" href="/tags/Linux/" rel="tag"><i class="fas fa-tags"></i>Linux</a>
+        
+        <a class="post-tag button" href="/tags/Ubuntu/" rel="tag"><i class="fas fa-tags"></i>Ubuntu</a>
+        
+        <a class="post-tag button" href="/tags/FTP/" rel="tag"><i class="fas fa-tags"></i>FTP</a>
+        
       </div>
-      {% endif %}
+      
     </footer>
   </article>
-  {% if theme.reward.enable %}
-  {% include "reward.njk" %}
-  {% endif %}
-  {% if page.prev or page.next %}
+  
+  
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
-      {% if page.next %}
-      <a href="{{ url_for(page.next.path) }}" rel="next" title="{{ page.next.title }}"><i class="fas fa-angle-left"></i><span class="nav-title">{{ page.next.title }}</span></a>
-      {% endif %}
+      
+      <a href="/2018-01-07-Android-Studio-Error-2/" rel="next" title="Android Studio import project 出现Error错误 程序包org.apache.http不存在"><i class="fas fa-angle-left"></i><span class="nav-title">Android Studio import project 出现Error错误 程序包org.apache.http不存在</span></a>
+      
     </div>
     <div class="page-nav-prev page-nav-item">
-      {% if page.prev %}
-      <a href="{{ url_for(page.prev.path) }}" rel="prev" title="{{ page.prev.title }}"><span class="nav-title">{{ page.prev.title }}</span><i class="fas fa-angle-right"></i></a>
-      {% endif %}
+      
+      <a href="/2018-09-26-Jetpack-Architecture-ViewModel/" rel="prev" title="Android Jetpack Architecture之ViewModel"><span class="nav-title">Android Jetpack Architecture之ViewModel</span><i class="fas fa-angle-right"></i></a>
+      
     </div>
   </nav>
-  {% endif %}
-  {% if theme.comment.enable %}
-  {% include "comment.njk" %}
-  {% endif %}
+  
+  
 </div>
-{% endblock %}
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/mine.png" alt="ncmon">
+  
+  <h1 class="author-name">ncmon</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">Archives</div>
+      <div><a href="/archives/">5</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">Categories</div>
+      <div><a href="/categories/">2</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">Tags</div>
+      <div><a href="/tags/">6</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#环境准备"><span class="toc-text">环境准备</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#安装Nginx"><span class="toc-text">安装Nginx</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#先更新一下源"><span class="toc-text">先更新一下源</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#安装gcc-g-依赖库"><span class="toc-text">安装gcc g++依赖库</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#安装prce依赖库"><span class="toc-text">安装prce依赖库</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#安装-zlib依赖库"><span class="toc-text">安装 zlib依赖库</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#安装-ssl依赖库"><span class="toc-text">安装 ssl依赖库</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#编译Nginx"><span class="toc-text">编译Nginx</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#安装与配置vsftpd"><span class="toc-text">安装与配置vsftpd</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#安装vsftpd"><span class="toc-text">安装vsftpd</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#启动vsftpd服务"><span class="toc-text">启动vsftpd服务</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#新建ftpuser目录作为ftp主目录-（ftpuser为目录名，随个人喜好创建）"><span class="toc-text">新建ftpuser目录作为ftp主目录 （ftpuser为目录名，随个人喜好创建）</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#新建ftpuser用户指定用户主目录和设置用户密码-（ftpuser为用户名，随个人喜好创建）"><span class="toc-text">新建ftpuser用户指定用户主目录和设置用户密码 （ftpuser为用户名，随个人喜好创建）</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#制定用户组"><span class="toc-text">制定用户组</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#新建文件-etc-vsftpd-user-list，用于存放允许访问ftp的用户"><span class="toc-text">新建文件/etc/vsftpd.user_list，用于存放允许访问ftp的用户</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#编辑vsftpd配置文件"><span class="toc-text">编辑vsftpd配置文件</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#重启vsftpd服务"><span class="toc-text">重启vsftpd服务</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#创建存储图片的根目录-（在ftpuser目录下-我这里使用www-images）"><span class="toc-text">创建存储图片的根目录 （在ftpuser目录下,我这里使用www/images）</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#在nginx目录下创建images目录"><span class="toc-text">在nginx目录下创建images目录</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#修改nginx-conf-nginx-conf在默认的server里再添加一个location并指定实际路径"><span class="toc-text">修改nginx/conf/nginx.conf在默认的server里再添加一个location并指定实际路径:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#修改用户访问权限"><span class="toc-text">修改用户访问权限</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#测试"><span class="toc-text">测试</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>Social Links</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:youremail@youremailhost" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>Blogroll</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://mozilla.github.io/nunjucks/" target="_blank">Nunjucks</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">ncmon</span><span class="year"><i class="far fa-copyright"></i>2018</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">BY-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
