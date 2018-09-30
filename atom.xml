@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-30T14:50:02.064Z</updated>
+  <updated>2018-09-30T15:55:52.895Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,11 +21,17 @@
     <link href="http://yoursite.com/2018-09-26-Jetpack-Architecture-ViewModel/"/>
     <id>http://yoursite.com/2018-09-26-Jetpack-Architecture-ViewModel/</id>
     <published>2018-09-26T12:40:11.000Z</published>
-    <updated>2018-09-30T14:50:02.064Z</updated>
+    <updated>2018-09-30T15:55:52.895Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;br&gt;&amp;ensp;&amp;ensp;Jetpack已经出了很久很久了，近几年的GDD几乎每次都会介绍新的组件，说来惭愧，一直没有好好学习，看近年的Google 的很多Demo中其实都有所体现，之前都是大概的了解了一遍。最近决定，好好梳理一遍，既学习其用法，也尝试学习下其设计思想。也是时候该补充一下了。进入正题–ViewModel&lt;/br&gt;&lt;br&gt;&lt;br&gt;&amp;ensp;&amp;ensp;首先都是看官方的例子，&lt;a href=&quot;https://developer.android.google.cn/topic/libraries/architecture/viewmodel&quot; title=&quot;Jetpack-ViewModel&quot;&gt;ViewModel&lt;/a&gt;官方的的例子是会和另一个架构库LiveData写在一起，很多的博客也是照官方的例子来说明，开始接触时甚至给了我一种假象：ViewModel都是和LiveData一起使用的。后来阅读才了解，ViewModel和LiveData职责分工还是很明显的，使用LiveData Demo主要使用其observe功能，LiveDate的使用及原理之后再分析，甚至在appcompat-v7:27.1.1中直接单独集成了ViewModel.所以，故为排除干扰，今天不会使用官方的主流Demo用法，先来看ViewModel。&lt;/br&gt;&lt;br&gt;&lt;br&gt;&amp;ensp;&amp;ensp;Android的UI控制器（Activity和Fragment）从创建到销毁拥有自己完整的生命周期，当系统配置发生改变时（(Configuration changes)），系统就会销毁Activity和与之关联的Fragment然后再次重建&lt;font color=#FFA500&gt;（可通过在AndroidManifast.xml中配置android:configChanges修改某些行为，这里不讨论）&lt;/font&gt;,那么存储在当前UI中的临时数据也会被清空，例如，登陆输入框，输入账号或密码后旋转屏幕，视图被重建，输入过的数据也清空了，这无疑是一种不友好的用户体验。对于少量的可序列化数据可以使用onSaveInstanceState()方法保存然后在onCreate()方法中重新恢复，正如所说onSaveInstanceState对于大量的数据缓存有一定的局限性，大量的数据缓存则可以使用&lt;a href=&quot;https://developer.android.com/reference/android/support/v4/app/Fragment&quot; title=&quot;Fragment-reference&quot;&gt;Fragment&lt;/a&gt;.setRetainInstance(true)来保存数据。ViewModel也是提供了相同的功能，用来存储和管理与UI相关的数据，允许数据在系统配置变化后存活，我们一起看一下这个ViewModel的缓存是怎么实现的呢？&lt;/br&gt;&lt;br&gt;
+      
+      
+        
+        
+          &lt;p&gt;&lt;br&gt;&amp;ensp;&amp;ensp;Jetpack已经出了很久很久了，近几年的GDD几乎每次都会介绍新的组件，说来惭愧，一直没有好好学习，看近年的Google
+        
+      
     
     </summary>
     
