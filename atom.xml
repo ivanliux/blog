@@ -43,17 +43,22 @@
     <link href="http://yoursite.com/2018-01-11-build-an-image-server/"/>
     <id>http://yoursite.com/2018-01-11-build-an-image-server/</id>
     <published>2018-01-11T12:40:11.000Z</published>
-    <updated>2018-01-11T12:41:29.079Z</updated>
+    <updated>2018-09-30T14:52:20.260Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;也许算作是建站以来的第一篇真正意义上的总结博客。 
-        
-      
+      &lt;p&gt;也许算作是建站以来的第一篇真正意义上的总结博客。  &lt;/p&gt;
+&lt;p&gt;首先感谢开源本主题的viosey同学和辛苦维护本主题的neoFelhz同学，对此主题极为喜欢。&lt;/p&gt;
+&lt;p&gt;新发现了当前的这个Meterial主题后发现居然有一个Gallery模板可以展示照片，平时的博客使用图片需要存放在一个位置上，平时也有一些业余的摄影爱好需要刚好可以存放，当然可以使用如之前使用过的七牛云等云对象存储平台存储使用，我这里也是刚好有个云服务器可以做存储就想着自己搭建一个图片服务器方便管理，也刚好能学习一下服务器方面的一些知识，经多次尝试，故总结一下,话不多说，开始行动.&lt;/p&gt;
+&lt;h1 id=&quot;环境准备&quot;&gt;&lt;a href=&quot;#环境准备&quot; class=&quot;headerlink&quot; title=&quot;环境准备&quot;&gt;&lt;/a&gt;环境准备&lt;/h1&gt;&lt;p&gt;Ubuntu版本Ubuntu 16.04.3&lt;/p&gt;
+&lt;h1 id=&quot;安装Nginx&quot;&gt;&lt;a href=&quot;#安装Nginx&quot; class=&quot;headerlink&quot; title=&quot;安装Nginx&quot;&gt;&lt;/a&gt;安装Nginx&lt;/h1&gt;&lt;p&gt;首先是准备编译Nginx的前期准备工作  &lt;/p&gt;
+&lt;h2 id=&quot;先更新一下源&quot;&gt;&lt;a href=&quot;#先更新一下源&quot; class=&quot;headerlink&quot; title=&quot;先更新一下源&quot;&gt;&lt;/a&gt;先更新一下源&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; apt-get update
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;安装gcc-g-依赖库&quot;&gt;&lt;a href=&quot;#安装gcc-g-依赖库&quot; class=&quot;headerlink&quot; title=&quot;安装gcc g++依赖库&quot;&gt;&lt;/a&gt;安装gcc g++依赖库&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; apt-get install build-essential
+&amp;gt; apt-get install libtool
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;安装prce依赖库&quot;&gt;&lt;a href=&quot;#安装prce依赖库&quot; class=&quot;headerlink&quot; title=&quot;安装prce依赖库&quot;&gt;&lt;/a&gt;安装prce依赖库&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; apt-get install libpcre3 libpcre3-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;安装-zlib依赖库&quot;&gt;&lt;a href=&quot;#安装-zlib依赖库&quot; class=&quot;headerlink&quot; title=&quot;安装 zlib依赖库&quot;&gt;&lt;/a&gt;安装 zlib依赖库&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; apt-get install zlib1g-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;安装-ssl依赖库&quot;&gt;&lt;a href=&quot;#安装-ssl依赖库&quot; class=&quot;headerlink&quot; title=&quot;安装 ssl依赖库&quot;&gt;&lt;/a&gt;安装 ssl依赖库&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; apt-get install openssl
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
