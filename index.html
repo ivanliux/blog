@@ -218,15 +218,6 @@
       <p>也许算作是建站以来的第一篇真正意义上的总结博客。  </p>
 <p>首先感谢开源本主题的viosey同学和辛苦维护本主题的neoFelhz同学，对此主题极为喜欢。</p>
 <p>新发现了当前的这个Meterial主题后发现居然有一个Gallery模板可以展示照片，平时的博客使用图片需要存放在一个位置上，平时也有一些业余的摄影爱好需要刚好可以存放，当然可以使用如之前使用过的七牛云等云对象存储平台存储使用，我这里也是刚好有个云服务器可以做存储就想着自己搭建一个图片服务器方便管理，也刚好能学习一下服务器方面的一些知识，经多次尝试，故总结一下,话不多说，开始行动.</p>
-<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><p>Ubuntu版本Ubuntu 16.04.3</p>
-<h1 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h1><p>首先是准备编译Nginx的前期准备工作  </p>
-<h2 id="先更新一下源"><a href="#先更新一下源" class="headerlink" title="先更新一下源"></a>先更新一下源</h2><pre><code>&gt; apt-get update
-</code></pre><h2 id="安装gcc-g-依赖库"><a href="#安装gcc-g-依赖库" class="headerlink" title="安装gcc g++依赖库"></a>安装gcc g++依赖库</h2><pre><code>&gt; apt-get install build-essential
-&gt; apt-get install libtool
-</code></pre><h2 id="安装prce依赖库"><a href="#安装prce依赖库" class="headerlink" title="安装prce依赖库"></a>安装prce依赖库</h2><pre><code>&gt; apt-get install libpcre3 libpcre3-dev
-</code></pre><h2 id="安装-zlib依赖库"><a href="#安装-zlib依赖库" class="headerlink" title="安装 zlib依赖库"></a>安装 zlib依赖库</h2><pre><code>&gt; apt-get install zlib1g-dev
-</code></pre><h2 id="安装-ssl依赖库"><a href="#安装-ssl依赖库" class="headerlink" title="安装 ssl依赖库"></a>安装 ssl依赖库</h2><pre><code>&gt; apt-get install openssl
-</code></pre>
       
     </main>
     <footer class="post-footer">
