@@ -1,917 +1,618 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.2 -->
-    <script>
-        window.materialVersion = "1.5.2"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1',
-            '1.5.0'
-        ]
-    </script>
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-
-
-
-
-        <link rel="dns-prefetch" href="https://cdn-city.livere.com"/>
-
-
-
-
-
-
-
-
-
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Title -->
-    
-    <title>
-        
-            归档: 2018 | 
-        
-        ncnom&#39;s blog
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" href="/img/favicon.png">
-
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="null">
-    <meta name="theme-color" content="#0097A7">
-
-    <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
+  <title>Archives: 2018 | ncnom&#39;s blog</title>
+  <meta name="description" content="null" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="ncnom's blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icons -->
-
-
-    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-
-
-
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
-    
-
-    <!-- WebAPP Icons -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="ncnom&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/archives/2018/">
-    <meta name="msapplication-navbutton-color" content="#0097A7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="ncnom&#39;s blog">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!-- Site Verification -->
-    
-    
-
-    <!-- RSS -->
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/archives/2018/">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018 | ncnom&#39;s blog">
-    <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="">
-    
-
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="http://yoursite.com/archives/2018/index.html" />
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
-
-
-
-    
-
-    <!-- Analytics -->
-    
-    
-    
-
-    <!-- Custom Head -->
-    
-
+  <link rel="shortcut icon" href="undefined" />
+  <link rel="icon" href="undefined" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
 </head>
 
-
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018-09-26-Jetpack-Architecture-ViewModel/">Android Jetpack Architecture之ViewModel</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            &ensp;&ensp;Jetpack已经出了很久很久了，近几年的GDD几乎每次都会介绍新的组件，说来惭愧，一直没有好好学习，看近年的Goo...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018-09-26-Jetpack-Architecture-ViewModel/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/mine.png" width="44px" height="44px" alt="ncmon's avatar">
-            </div>
-            <div>
-                <strong>ncmon</strong>
-                <span>9月 26, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/技术栈/">技术栈</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018-01-11-build-an-image-server/">Ubuntu搭建Nginx图片服务器</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            也许算作是建站以来的第一篇真正意义上的总结博客。  
-首先感谢开源本主题的viosey同学和辛苦维护本主题的neoFelhz同学，对此...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018-01-11-build-an-image-server/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/mine.png" width="44px" height="44px" alt="ncmon's avatar">
-            </div>
-            <div>
-                <strong>ncmon</strong>
-                <span>1月 11, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/技术栈/">技术栈</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018-01-07-Android-Studio-Error-2/">Android Studio import project 出现Error错误 程序包org.apache.http不存在</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            遇到新的产品形态、样式需求我们经常会在Github搜索开源项目，有些项目是早期Android版本中开发而成，后续Google会有部分API在新版本中...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018-01-07-Android-Studio-Error-2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/mine.png" width="44px" height="44px" alt="ncmon's avatar">
-            </div>
-            <div>
-                <strong>ncmon</strong>
-                <span>1月 07, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/错误志/">错误志</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
-
-    
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
 </div>
 
 
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				ncnom's blog
+			</a>
 
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/mine.png" alt="ncmon's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        ncmonlx@outlook.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="#" target="_blank" title="Email Me">
+				<div class='menu'>
+					<ul class='h-list'>
                         
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
+    						
+    							<li>
+    								<a class='nav-about flat-box' href='/'>
+    									<i class='fa fa-home fa-'></i>&nbsp;主页
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-projects flat-box' href='https://xaoxuu.com/proj'>
+    									<i class='fa fa-cube fa-'></i>&nbsp;项目
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-home flat-box' href='/'>
+    									<i class='fa fa-rss fa-'></i>&nbsp;博客
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-archives flat-box' href='/archives'>
+    									<i class='fa fa-archive fa-'></i>&nbsp;归档
+    								</a>
+    							</li>
+    						
+        			 
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">ncnom&#39;s blog</div>
+		<nav>
+            <ul>
+                
+                    
+                        <li>
+                            <a class='nav-about flat-box nav flat-box' href='/'><i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-projects flat-box nav flat-box' href='https://xaoxuu.com/proj'><i class='fa fa-cube fa-fw'></i>&nbsp;项目</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-rss fa-fw'></i>&nbsp;博客</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-archives flat-box nav flat-box' href='/archives'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
+                        </li>
+                    
+             
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
             
-        </ul>
-    </li>
+	
+    <script>
+        window.subData= { title:'year : 2018'}
+    </script>
 
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
-        
-    
 
-    <!-- Archives  -->
+<section class="post-list">
     
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018-09-26-Jetpack-Architecture-ViewModel/">
                 
-                    <i class="material-icons sidebar-material-icons">inbox</i>
+                    Android Jetpack Architecture之ViewModel
                 
-                    归档
-                <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a>
-            </ul>
-        </li>
+        </h2>
+        <time>
+            2018-09-26
+        </time>
         
     
+    <div class='cats'>
+        <a href="/categories/技术栈/">技术栈</a>
+    </div>
 
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/技术栈/">技术栈<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/错误志/">错误志<span class="sidebar_archives-count">2</span></a>
-            </ul>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
 
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/tags" title="标签">
-                
-                    <i class="material-icons sidebar-material-icons">bookmark</i>
-                
-                标签
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/gallery" title="光影">
-                
-                    <i class="material-icons sidebar-material-icons">photo</i>
-                
-                光影
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="关于">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                关于
-            </a>
-        </li>
-        
-    
+    </section>
 
-    <!-- Article Number  -->
-    
-        <li>
-            <a href="/archives">
-                文章总数
-                <span class="sidebar-badge">5</span>
-            </a>
-        </li>
-        
-    
+    <section class="article typo">
+        <p><br>&ensp;&ensp;Jetpack已经出了很久很久了，近几年的GDD几乎每次都会介绍新的组件，说来惭愧，一直没有好好学习，看近年的Google 的很多Demo中其实都有所体现，之前都是大概的了解了一遍。最近决定，好好梳理一遍，既学习其用法，也尝试学习下其设计思想。也是时候该补充一下了。进入正题–ViewModel<br><br><br>&ensp;&ensp;首先都是看官方的例子，<a href="https://developer.android.google.cn/topic/libraries/architecture/viewmodel" title="Jetpack-ViewModel" target="_blank" rel="external">ViewModel</a>官方的的例子是会和另一个架构库LiveData写在一起，很多的博客也是照官方的例子来说明，开始接触时甚至给了我一种假象：ViewModel都是和LiveData一起使用的。后来阅读才了解，ViewModel和LiveData职责分工还是很明显的，使用LiveData Demo主要使用其observe功能，LiveDate的使用及原理之后再分析，甚至在appcompat-v7:27.1.1中直接单独集成了ViewModel.所以，故为排除干扰，今天不会使用官方的主流Demo用法，先来看ViewModel。<br><br><br>&ensp;&ensp;Android的UI控制器（Activity和Fragment）从创建到销毁拥有自己完整的生命周期，当系统配置发生改变时（(Configuration changes)），系统就会销毁Activity和与之关联的Fragment然后再次重建<font color="#FFA500">（可通过在AndroidManifast.xml中配置android:configChanges修改某些行为，这里不讨论）</font>,那么存储在当前UI中的临时数据也会被清空，例如，登陆输入框，输入账号或密码后旋转屏幕，视图被重建，输入过的数据也清空了，这无疑是一种不友好的用户体验。对于少量的可序列化数据可以使用onSaveInstanceState()方法保存然后在onCreate()方法中重新恢复，正如所说onSaveInstanceState对于大量的数据缓存有一定的局限性，大量的数据缓存则可以使用<a href="https://developer.android.com/reference/android/support/v4/app/Fragment" title="Fragment-reference" target="_blank" rel="external">Fragment</a>.setRetainInstance(true)来保存数据。ViewModel也是提供了相同的功能，用来存储和管理与UI相关的数据，允许数据在系统配置变化后存活，我们一起看一下这个ViewModel的缓存是怎么实现的呢？<br></p>
+<p><br>首先先看下使用方式，先上效果图<br><br><img src="http://omv6ufghj.bkt.clouddn.com/device-2018-09-27-224647_20180927224809.gif" alt="ViewMode Sample"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyViewModel</span> <span class="keyword">extends</span> <span class="title">ViewModel</span> </span>&#123;</div><div class="line">   	String name;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>&#123;</div><div class="line">    	<span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCleared</span><span class="params">()</span> </span>&#123;</div><div class="line">    	<span class="keyword">super</span>.onCleared();</div><div class="line">    	name = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewModelActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG = <span class="string">"ViewModelActivity"</span>;</div><div class="line">    TextView textView;</div><div class="line">    <span class="keyword">private</span> MyViewModel myViewModel;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_viewmodel);</div><div class="line">        textView = findViewById(R.id.textView);</div><div class="line">        textView.setOnClickListener(<span class="keyword">this</span>);</div><div class="line">        ViewModelProvider.Factory factory = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication());</div><div class="line">	<span class="comment">/*</span></div><div class="line">	*这里的this是ViewModelStoreOwner接口在appcompat-v7:27.1.1支持库中AppCompatActivity已经实现了，		</div><div class="line">	*如果是较低版本，需要更新支持包或者参考其实现对本来继承的Activity做对应实现。</div><div class="line">	*/</div><div class="line">        ViewModelProvider provider = <span class="keyword">new</span> ViewModelProvider(<span class="keyword">this</span>, factory);<span class="comment">//</span></div><div class="line">        myViewModel = provider.get(MyViewModel.class);</div><div class="line">        Log.e(TAG, <span class="string">"onCreate: "</span> + myViewModel.getName() );</div><div class="line">        <span class="keyword">if</span> (myViewModel.getName() != <span class="keyword">null</span>) &#123;</div><div class="line">            textView.setText(myViewModel.getName());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (v.getId())&#123;</div><div class="line">            <span class="keyword">case</span> R.id.textView:</div><div class="line">                myViewModel.setName(<span class="string">"MyViewModel Test"</span>);</div><div class="line">                textView.setText(myViewModel.getName());</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.constraint.ConstraintLayout</span></span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/textView"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_marginStart</span>=<span class="string">"8dp"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"8dp"</span></div><div class="line">        <span class="attr">android:layout_marginEnd</span>=<span class="string">"8dp"</span></div><div class="line">        <span class="attr">android:layout_marginBottom</span>=<span class="string">"8dp"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"default"</span></div><div class="line">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">"parent"</span></div><div class="line">        <span class="attr">app:layout_constraintEnd_toEndOf</span>=<span class="string">"parent"</span></div><div class="line">        <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">"parent"</span></div><div class="line">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">"parent"</span> /&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">android.support.constraint.ConstraintLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>非常简单的一个例子，这就是ViewModel最简单的使用了，就是TextView中显示ViewModel的数据。ViewModel需要由ViewModelProvider.get(Class<t>)来取得，旋转屏幕销毁后，之前改变的数据还在。<br>接下来就是进入主题分析下ViewModel到底是怎么实现的呢？<br>带着问题看源码：  </t></p>
+<ul>
+<li>ViewModelProvider是干啥的？</li>
+<li>AndroidViewModelFactory 这命名一看就是应该是工厂模式，工厂创建了什么？</li>
+<li>provider.get(MyViewModel.class) 这里直接使用的get命名就得到了需要的唯一数据</li>
+<li>注释中ViewModelStoreOwner又是什么角色？<br>先看ViewModel类，没什么说的，就是一个么有任何真正实现的抽象类，只有一个抽象方法onCleared()</li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewModel</span> </span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * This method will be called when this ViewModel is no longer used and will be destroyed.</div><div class="line">     * &lt;p&gt;</div><div class="line">     * It is useful when ViewModel observes some data and you need to clear this subscription to</div><div class="line">     * prevent a leak of this ViewModel.</div><div class="line">     */</div><div class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"WeakerAccess"</span>)</div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCleared</span><span class="params">()</span> </span>&#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接着看下ViewModelFactory，顾名思义就是制造ViewModel的。<br>AndroidViewModelFactory的继承关系如下:</p>
+<blockquote>
+<p>android.arch.lifecycle.ViewModelProvider.Factory</p>
+<blockquote>
+<p>android.arch.lifecycle.ViewModelProvider.NewInstanceFactory</p>
+<blockquote>
+<p>android.arch.lifecycle.ViewModelProvider.AndroidViewModelFactory</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Factory是一个只包含一个create的interface，NewInstanceFactory实现了该方法传入Class<t>会利用ViewModel的默认无参构造器创建一个对应ViewModel的实例，而AndroidViewModelFactory增加了一个属性就是应用的Applicaion,同时重写create方法，查看ViewModel是否有包含Applicaion参数的构造方法从而使用，对应的其实还有一个AndroidViewModel是ViewModel的子类，默认已经实现了带有Application参数的构造方法，需要使用在ViewModel中使用application的直接继承AndroidViewModel就可以，看到这里其实最上面的例子有个不是问题的问题，其实上面的Factory直接使用NewInstanceFactory就可以创建出对应的ViewModel实例了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Implementations of &#123;<span class="doctag">@code</span> Factory&#125; interface are responsible to instantiate ViewModels.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Factory</span> </span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Creates a new instance of the given &#123;<span class="doctag">@code</span> Class&#125;.</div><div class="line">     * &lt;p&gt;</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> modelClass a &#123;<span class="doctag">@code</span> Class&#125; whose instance is requested</div><div class="line">     * <span class="doctag">@param</span> &lt;T&gt;        The type parameter for the ViewModel.</div><div class="line">     * <span class="doctag">@return</span> a newly created ViewModel</div><div class="line">     */</div><div class="line">    <span class="meta">@NonNull</span></div><div class="line">    &lt;T extends ViewModel&gt; <span class="function">T <span class="title">create</span><span class="params">(@NonNull Class&lt;T&gt; modelClass)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></t></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Simple factory, which calls empty constructor on the give class.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">NewInstanceFactory</span> <span class="keyword">implements</span> <span class="title">Factory</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"ClassNewInstance"</span>)</div><div class="line">    <span class="meta">@NonNull</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">public</span> &lt;T extends ViewModel&gt; <span class="function">T <span class="title">create</span><span class="params">(@NonNull Class&lt;T&gt; modelClass)</span> </span>&#123;</div><div class="line">        <span class="comment">//noinspection TryWithIdenticalCatches</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> modelClass.newInstance();</div><div class="line">        &#125; <span class="keyword">catch</span> (InstantiationException e) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Cannot create an instance of "</span> + modelClass, e);</div><div class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Cannot create an instance of "</span> + modelClass, e);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * &#123;<span class="doctag">@link</span> Factory&#125; which may create &#123;<span class="doctag">@link</span> AndroidViewModel&#125; and</div><div class="line"> * &#123;<span class="doctag">@link</span> ViewModel&#125;, which have an empty constructor.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">AndroidViewModelFactory</span> <span class="keyword">extends</span> <span class="title">ViewModelProvider</span>.<span class="title">NewInstanceFactory</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> AndroidViewModelFactory sInstance;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Retrieve a singleton instance of AndroidViewModelFactory.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> application an application to pass in &#123;<span class="doctag">@link</span> AndroidViewModel&#125;</div><div class="line">     * <span class="doctag">@return</span> A valid &#123;<span class="doctag">@link</span> AndroidViewModelFactory&#125;</div><div class="line">     */</div><div class="line">    <span class="meta">@NonNull</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AndroidViewModelFactory <span class="title">getInstance</span><span class="params">(@NonNull Application application)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (sInstance == <span class="keyword">null</span>) &#123;</div><div class="line">            sInstance = <span class="keyword">new</span> AndroidViewModelFactory(application);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> sInstance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Application mApplication;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Creates a &#123;<span class="doctag">@code</span> AndroidViewModelFactory&#125;</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> application an application to pass in &#123;<span class="doctag">@link</span> AndroidViewModel&#125;</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AndroidViewModelFactory</span><span class="params">(@NonNull Application application)</span> </span>&#123;</div><div class="line">        mApplication = application;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@NonNull</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">public</span> &lt;T extends ViewModel&gt; <span class="function">T <span class="title">create</span><span class="params">(@NonNull Class&lt;T&gt; modelClass)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (AndroidViewModel.class.isAssignableFrom(modelClass)) &#123;</div><div class="line">            <span class="comment">//noinspection TryWithIdenticalCatches</span></div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="keyword">return</span> modelClass.getConstructor(Application.class).newInstance(mApplication);</div><div class="line">            &#125; <span class="keyword">catch</span> (NoSuchMethodException e) &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Cannot create an instance of "</span> + modelClass, e);</div><div class="line">            &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Cannot create an instance of "</span> + modelClass, e);</div><div class="line">            &#125; <span class="keyword">catch</span> (InstantiationException e) &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Cannot create an instance of "</span> + modelClass, e);</div><div class="line">            &#125; <span class="keyword">catch</span> (InvocationTargetException e) &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Cannot create an instance of "</span> + modelClass, e);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.create(modelClass);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>之后通过ViewModelStoreOwner和刚刚创建的Factory创建出ViewModelPrivider实例<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Creates &#123;<span class="doctag">@code</span> ViewModelProvider&#125;, which will create &#123;<span class="doctag">@code</span> ViewModels&#125; via the given</div><div class="line"> * &#123;<span class="doctag">@code</span> Factory&#125; and retain them in a store of the given &#123;<span class="doctag">@code</span> ViewModelStoreOwner&#125;.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> owner   a &#123;<span class="doctag">@code</span> ViewModelStoreOwner&#125; whose &#123;<span class="doctag">@link</span> ViewModelStore&#125; will be used to</div><div class="line"> *                retain &#123;<span class="doctag">@code</span> ViewModels&#125;</div><div class="line"> * <span class="doctag">@param</span> factory a &#123;<span class="doctag">@code</span> Factory&#125; which will be used to instantiate</div><div class="line"> *                new &#123;<span class="doctag">@code</span> ViewModels&#125;</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">ViewModelProvider</span><span class="params">(@NonNull ViewModelStoreOwner owner, @NonNull Factory factory)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>(owner.getViewModelStore(), factory);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Creates &#123;<span class="doctag">@code</span> ViewModelProvider&#125;, which will create &#123;<span class="doctag">@code</span> ViewModels&#125; via the given</div><div class="line"> * &#123;<span class="doctag">@code</span> Factory&#125; and retain them in the given &#123;<span class="doctag">@code</span> store&#125;.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> store   &#123;<span class="doctag">@code</span> ViewModelStore&#125; where ViewModels will be stored.</div><div class="line"> * <span class="doctag">@param</span> factory factory a &#123;<span class="doctag">@code</span> Factory&#125; which will be used to instantiate</div><div class="line"> *                new &#123;<span class="doctag">@code</span> ViewModels&#125;</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">ViewModelProvider</span><span class="params">(@NonNull ViewModelStore store, @NonNull Factory factory)</span> </span>&#123;</div><div class="line">    mFactory = factory;</div><div class="line">    <span class="keyword">this</span>.mViewModelStore = store;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * A scope that owns &#123;<span class="doctag">@link</span> ViewModelStore&#125;.</div><div class="line"> * &lt;p&gt;</div><div class="line"> * A responsibility of an implementation of this interface is to retain owned ViewModelStore</div><div class="line"> * during the configuration changes and call &#123;<span class="doctag">@link</span> ViewModelStore#clear()&#125;, when this scope is</div><div class="line"> * going to be destroyed.</div><div class="line"> */</div><div class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"WeakerAccess"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ViewModelStoreOwner</span> </span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Returns owned &#123;<span class="doctag">@link</span> ViewModelStore&#125;</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> a &#123;<span class="doctag">@code</span> ViewModelStore&#125;</div><div class="line">     */</div><div class="line">    <span class="meta">@NonNull</span></div><div class="line">    <span class="function">ViewModelStore <span class="title">getViewModelStore</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>ViewModelStoreOwner 也是一个接口是FragmentActivity实现了该接口并实现了其中的getViewModelStore()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FragmentActivity</span> <span class="keyword">extends</span> <span class="title">BaseFragmentActivityApi16</span> <span class="keyword">implements</span></span></div><div class="line">        <span class="title">ViewModelStoreOwner</span>...&#123;</div><div class="line">    <span class="keyword">private</span> ViewModelStore mViewModelStore;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        mFragments.attachHost(<span class="keyword">null</span> <span class="comment">/*parent*/</span>);</div><div class="line"></div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line"></div><div class="line">        NonConfigurationInstances nc =</div><div class="line">                (NonConfigurationInstances) getLastNonConfigurationInstance();</div><div class="line">        <span class="keyword">if</span> (nc != <span class="keyword">null</span>) &#123;</div><div class="line">            mViewModelStore = nc.viewModelStore;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Returns the &#123;<span class="doctag">@link</span> ViewModelStore&#125; associated with this activity</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> a &#123;<span class="doctag">@code</span> ViewModelStore&#125;</div><div class="line">     */</div><div class="line">    <span class="meta">@NonNull</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> ViewModelStore <span class="title">getViewModelStore</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (getApplication() == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Your activity is not yet attached to the "</span></div><div class="line">                    + <span class="string">"Application instance. You can't request ViewModel before onCreate call."</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (mViewModelStore == <span class="keyword">null</span>) &#123;</div><div class="line">            mViewModelStore = <span class="keyword">new</span> ViewModelStore();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> mViewModelStore;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这个ViewModelStore又是什么呢，其实就是真正利用HashMap存储ViewModel的地方了，看下代码在存储和clear同时会调用ViewModel需要实现的抽象方法onClear()<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewModelStore</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> HashMap&lt;String, ViewModel&gt; mMap = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">final</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(String key, ViewModel viewModel)</span> </span>&#123;</div><div class="line">        ViewModel oldViewModel = mMap.put(key, viewModel);</div><div class="line">        <span class="keyword">if</span> (oldViewModel != <span class="keyword">null</span>) &#123;</div><div class="line">            oldViewModel.onCleared();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">final</span> ViewModel <span class="title">get</span><span class="params">(String key)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mMap.get(key);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     *  Clears internal storage and notifies ViewModels that they are no longer used.</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> (ViewModel vm : mMap.values()) &#123;</div><div class="line">            vm.onCleared();</div><div class="line">        &#125;</div><div class="line">        mMap.clear();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样ViewModelProvider就是有了一个ViewModel的容器，这时去调用ViewModelProvider的get(Class<t>)方法就是去调用mViewModelStore<br>的get()方法取出对应的ViewModel所以这里只要持有的ViewModelStore是有缓存的，那么取出的ViewModel就是相同的缓存了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Returns an existing ViewModel or creates a new one in the scope (usually, a fragment or</div><div class="line"> * an activity), associated with this &#123;<span class="doctag">@code</span> ViewModelProvider&#125;.</div><div class="line"> * &lt;p&gt;</div><div class="line"> * The created ViewModel is associated with the given scope and will be retained</div><div class="line"> * as long as the scope is alive (e.g. if it is an activity, until it is</div><div class="line"> * finished or process is killed).</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> modelClass The class of the ViewModel to create an instance of it if it is not</div><div class="line"> *                   present.</div><div class="line"> * <span class="doctag">@param</span> &lt;T&gt;        The type parameter for the ViewModel.</div><div class="line"> * <span class="doctag">@return</span> A ViewModel that is an instance of the given type &#123;<span class="doctag">@code</span> T&#125;.</div><div class="line"> */</div><div class="line"><span class="meta">@NonNull</span></div><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="keyword">public</span> &lt;T extends ViewModel&gt; <span class="function">T <span class="title">get</span><span class="params">(@NonNull Class&lt;T&gt; modelClass)</span> </span>&#123;</div><div class="line">    String canonicalName = modelClass.getCanonicalName();</div><div class="line">    <span class="keyword">if</span> (canonicalName == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Local and anonymous classes can not be ViewModels"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> get(DEFAULT_KEY + <span class="string">":"</span> + canonicalName, modelClass);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@NonNull</span></div><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="keyword">public</span> &lt;T extends ViewModel&gt; <span class="function">T <span class="title">get</span><span class="params">(@NonNull String key, @NonNull Class&lt;T&gt; modelClass)</span> </span>&#123;</div><div class="line">    ViewModel viewModel = mViewModelStore.get(key);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (modelClass.isInstance(viewModel)) &#123;</div><div class="line">        <span class="comment">//noinspection unchecked</span></div><div class="line">        <span class="keyword">return</span> (T) viewModel;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//noinspection StatementWithEmptyBody</span></div><div class="line">        <span class="keyword">if</span> (viewModel != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">// <span class="doctag">TODO:</span> log a warning.</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    viewModel = mFactory.create(modelClass);</div><div class="line">    mViewModelStore.put(key, viewModel);</div><div class="line">    <span class="comment">//noinspection unchecked</span></div><div class="line">    <span class="keyword">return</span> (T) viewModel;</div><div class="line">&#125;</div></pre></td></tr></table></figure></t></p>
+<p>看到这里就会发现ViewModelStore的缓存其实是通过NonConfigurationInstances的缓存来实现的，这样就完成了Activity销毁重建后ViewModel还保存原来的数据的过程，那么NonConfigurationInstances 是什么呢？如果有了解过使用在Activity中使用onRetainNonConfigurationInstance()保存缓存数据，在onCreate()中通过getLastNonConfigurationInstance()恢复之前的数据状态的同学可能会很熟悉这里的写法，是的，这里FragmentActivity就是使用的这种方式来保存之前的ViewModelStore,看下FragmentActivity的onRetainNonConfigurationInstance()方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Retain all appropriate fragment state.  You can NOT</div><div class="line"> * override this yourself!  Use &#123;<span class="doctag">@link</span> #onRetainCustomNonConfigurationInstance()&#125;</div><div class="line"> * if you want to retain your own state.</div><div class="line"> */</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Object <span class="title">onRetainNonConfigurationInstance</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (mStopped) &#123;</div><div class="line">        doReallyStop(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    Object custom = onRetainCustomNonConfigurationInstance();</div><div class="line"></div><div class="line">    FragmentManagerNonConfig fragments = mFragments.retainNestedNonConfig();</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (fragments == <span class="keyword">null</span> &amp;&amp; mViewModelStore == <span class="keyword">null</span> &amp;&amp; custom == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    NonConfigurationInstances nci = <span class="keyword">new</span> NonConfigurationInstances();</div><div class="line">    nci.custom = custom;</div><div class="line">    nci.viewModelStore = mViewModelStore;<span class="comment">//就是这里了，会把之前的VeiwmodelStroe存储到NonConfigurationInstances中以供后续恢复使用</span></div><div class="line">    nci.fragments = fragments;</div><div class="line">    <span class="keyword">return</span> nci;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里其实再次出现了一个问题  onRetainNonConfigurationInstance()和getLastNonConfigurationInstance()又是怎么恢复数据呢?…这个其实和Activity的启动流程相关，这里也介绍一下吧，之后的内容其实是Activity的内容了，趁这次看ViwModel也跟着看了一遍，有了解过Activity启动流程的同学更容易理解的多，大家酌情观看。</p>
+<p>也不能从头开始说起，再从头就要越扯越远了，就从ActivityThread.java中的scheduleLaunchActivity开始<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">scheduleLaunchActivity</span><span class="params">(Intent intent, IBinder token, <span class="keyword">int</span> ident,</span></span></div><div class="line">        ActivityInfo info, Configuration curConfig, Configuration overrideConfig,</div><div class="line">        CompatibilityInfo compatInfo, String referrer, IVoiceInteractor voiceInteractor,</div><div class="line">        <span class="keyword">int</span> procState, Bundle state, PersistableBundle persistentState,</div><div class="line">        List&lt;ResultInfo&gt; pendingResults, List&lt;ReferrerIntent&gt; pendingNewIntents,</div><div class="line">        <span class="keyword">boolean</span> notResumed, <span class="keyword">boolean</span> isForward, ProfilerInfo profilerInfo) &#123;</div><div class="line"></div><div class="line">    updateProcessState(procState, <span class="keyword">false</span>);</div><div class="line"></div><div class="line">    ActivityClientRecord r = <span class="keyword">new</span> ActivityClientRecord();</div><div class="line"></div><div class="line">    r.token = token;</div><div class="line">    r.ident = ident;</div><div class="line">    r.intent = intent;</div><div class="line">    r.referrer = referrer;</div><div class="line">    r.voiceInteractor = voiceInteractor;</div><div class="line">    r.activityInfo = info;</div><div class="line">    r.compatInfo = compatInfo;</div><div class="line">    r.state = state;</div><div class="line">    r.persistentState = persistentState;</div><div class="line"></div><div class="line">    r.pendingResults = pendingResults;</div><div class="line">    r.pendingIntents = pendingNewIntents;</div><div class="line"></div><div class="line">    r.startsNotResumed = notResumed;</div><div class="line">    r.isForward = isForward;</div><div class="line"></div><div class="line">    r.profilerInfo = profilerInfo;</div><div class="line"></div><div class="line">    r.overrideConfig = overrideConfig;</div><div class="line">    updatePendingConfiguration(curConfig);</div><div class="line"></div><div class="line">    sendMessage(H.LAUNCH_ACTIVITY, r);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>从ActivityThread.java中H（extents Handler）接收到LAUNCH_ACTIVITY，并且会接收ActivityClientRecord，其中会调用ActivityThread的handleLaunchActivity方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ActivityThread.java</span></div><div class="line"><span class="comment">//没有前后文的H中的handleMessage~~~</span></div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">           <span class="keyword">if</span> (DEBUG_MESSAGES) Slog.v(TAG, <span class="string">"&gt;&gt;&gt; handling: "</span> + codeToString(msg.what));</div><div class="line">           <span class="keyword">switch</span> (msg.what) &#123;</div><div class="line">               <span class="keyword">case</span> LAUNCH_ACTIVITY: &#123;</div><div class="line">                   Trace.traceBegin(Trace.TRACE_TAG_ACTIVITY_MANAGER, <span class="string">"activityStart"</span>);</div><div class="line">                   <span class="keyword">final</span> ActivityClientRecord r = (ActivityClientRecord) msg.obj;</div><div class="line">		<span class="comment">//ActivityClientRecord 是apk进程中一个Activity的代表，这个对象的activity成员引用真正的Activity组件,后面的都和它有关系</span></div><div class="line">                   r.packageInfo = getPackageInfoNoCheck(</div><div class="line">                           r.activityInfo.applicationInfo, r.compatInfo);</div><div class="line">                   handleLaunchActivity(r, <span class="keyword">null</span>, <span class="string">"LAUNCH_ACTIVITY"</span>);<span class="comment">///这里~这里~</span></div><div class="line">                   Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);</div><div class="line">               &#125; <span class="keyword">break</span>;</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handleLaunchActivity</span><span class="params">(ActivityClientRecord r, Intent customIntent, String reason)</span> </span>&#123;</div><div class="line">        ...</div><div class="line">        Activity a = performLaunchActivity(r, customIntent);</div><div class="line"> ...</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> Activity <span class="title">performLaunchActivity</span><span class="params">(ActivityClientRecord r, Intent customIntent)</span> </span>&#123;</div><div class="line">...</div><div class="line">    <span class="keyword">if</span> (activity != <span class="keyword">null</span>) &#123;</div><div class="line">            CharSequence title = r.activityInfo.loadLabel(appContext.getPackageManager());</div><div class="line">            Configuration config = <span class="keyword">new</span> Configuration(mCompatConfiguration);</div><div class="line">            <span class="keyword">if</span> (r.overrideConfig != <span class="keyword">null</span>) &#123;</div><div class="line">                config.updateFrom(r.overrideConfig);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (DEBUG_CONFIGURATION) Slog.v(TAG, <span class="string">"Launching activity "</span></div><div class="line">                    + r.activityInfo.name + <span class="string">" with config "</span> + config);</div><div class="line">            Window window = <span class="keyword">null</span>;</div><div class="line">            <span class="keyword">if</span> (r.mPendingRemoveWindow != <span class="keyword">null</span> &amp;&amp; r.mPreserveWindow) &#123;</div><div class="line">                window = r.mPendingRemoveWindow;</div><div class="line">                r.mPendingRemoveWindow = <span class="keyword">null</span>;</div><div class="line">                r.mPendingRemoveWindowManager = <span class="keyword">null</span>;</div><div class="line">            &#125;</div><div class="line">            appContext.setOuterContext(activity);</div><div class="line">            activity.attach(appContext, <span class="keyword">this</span>, getInstrumentation(), r.token,</div><div class="line">                    r.ident, app, r.intent, r.activityInfo, title, r.parent,</div><div class="line">                    r.embeddedID, r.lastNonConfigurationInstances, config, <span class="comment">//看到这个r.lastNonConfigurationInstances 就是在Activity方法中调用getLastNonConfigurationInstance()获取到的Object了。</span></div><div class="line">                    r.referrer, r.voiceInteractor, window, r.configCallback);</div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注释中的地方就是lastNonConfigurationInstances的赋值的地方，可能会发现在scheduleLaunchActivity并没有对lastNonConfigurationInstances赋值，因为第一次启动Activity时，这里其实就是null的，那么赋值的地方在哪里呢，既然是销毁后会恢复数据，追踪发现在performDestroyActivity()也就是在调用onDestroy生命周期之前有这样一段代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> ActivityClientRecord <span class="title">performDestroyActivity</span><span class="params">(IBinder token, <span class="keyword">boolean</span> finishing,</span></span></div><div class="line">            <span class="keyword">int</span> configChanges, <span class="keyword">boolean</span> getNonConfigInstance) &#123;</div><div class="line">        ActivityClientRecord r = mActivities.get(token);</div><div class="line">        ...无关代码省略</div><div class="line">            <span class="keyword">if</span> (getNonConfigInstance) &#123;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    r.lastNonConfigurationInstances</div><div class="line">                            = r.activity.retainNonConfigurationInstances();<span class="comment">///就是这里出现了想要找的NonConfigurationInstances</span></div><div class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                    <span class="keyword">if</span> (!mInstrumentation.onException(r.activity, e)) &#123;</div><div class="line">                        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(</div><div class="line">                                <span class="string">"Unable to retain activity "</span></div><div class="line">                                + r.intent.getComponent().toShortString()</div><div class="line">                                + <span class="string">": "</span> + e.toString(), e);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                r.activity.mCalled = <span class="keyword">false</span>;</div><div class="line">                mInstrumentation.callActivityOnDestroy(r.activity);</div><div class="line">	...无关代码省略</div><div class="line">        <span class="keyword">return</span> r;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>在performDestroyActivity()调用了Activity.retainNonConfigurationInstances()方法了，所以逻辑切换回Activity中…<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">/**</span></div><div class="line"> * This method is similar to &#123;<span class="doctag">@link</span> #onRetainNonConfigurationInstance()&#125; except that</div><div class="line"> * it should return either a mapping from  child activity id strings to arbitrary objects,</div><div class="line"> * or null.  This method is intended to be used by Activity framework subclasses that control a</div><div class="line"> * set of child activities, such as ActivityGroup.  The same guarantees and restrictions apply</div><div class="line"> * as for &#123;<span class="doctag">@link</span> #onRetainNonConfigurationInstance()&#125;.  The default implementation returns null.</div><div class="line"> */</div><div class="line"><span class="meta">@Nullable</span></div><div class="line"><span class="function">HashMap&lt;String,Object&gt; <span class="title">onRetainNonConfigurationChildInstances</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function">NonConfigurationInstances <span class="title">retainNonConfigurationInstances</span><span class="params">()</span> </span>&#123;</div><div class="line">    Object activity = onRetainNonConfigurationInstance();<span class="comment">///熟悉的代码，原来的配方，和分析ActivityThread之前联系起来了，在Activity中是空实现，这里就是获取子类的NonConfigurationInstance()，之前的例子就是的得FragmentActivity中的具体实现，上文中已经在分析ActivityThread.java已经指出。</span></div><div class="line">    HashMap&lt;String, Object&gt; children = onRetainNonConfigurationChildInstances();</div><div class="line">    FragmentManagerNonConfig fragments = mFragments.retainNestedNonConfig();</div><div class="line"></div><div class="line">    <span class="comment">// We're already stopped but we've been asked to retain.</span></div><div class="line">    <span class="comment">// Our fragments are taken care of but we need to mark the loaders for retention.</span></div><div class="line">    <span class="comment">// In order to do this correctly we need to restart the loaders first before</span></div><div class="line">    <span class="comment">// handing them off to the next activity.</span></div><div class="line">    mFragments.doLoaderStart();</div><div class="line">    mFragments.doLoaderStop(<span class="keyword">true</span>);</div><div class="line">    ArrayMap&lt;String, LoaderManager&gt; loaders = mFragments.retainLoaderNonConfig();</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (activity == <span class="keyword">null</span> &amp;&amp; children == <span class="keyword">null</span> &amp;&amp; fragments == <span class="keyword">null</span> &amp;&amp; loaders == <span class="keyword">null</span></div><div class="line">            &amp;&amp; mVoiceInteractor == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    NonConfigurationInstances nci = <span class="keyword">new</span> NonConfigurationInstances();</div><div class="line">    nci.activity = activity;</div><div class="line">    nci.children = children;</div><div class="line">    nci.fragments = fragments;</div><div class="line">    nci.loaders = loaders;</div><div class="line">    <span class="keyword">if</span> (mVoiceInteractor != <span class="keyword">null</span>) &#123;</div><div class="line">        mVoiceInteractor.retainInstance();</div><div class="line">        nci.voiceInteractor = mVoiceInteractor;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> nci;<span class="comment">//这里返回的是Activity中的NonConfigurationInstances就保存在了ActivityClientRecord中了</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>至此，ActivityClientRecord就不再深入了，可以看到在Activity中是以一个ArrayMap来保存Activity的记录，记录的就是Activity的状态，所以这里就实现了对NonConfigurationInstances的保存。</p>
+<hr>
+<p><strong>结语：至此就基本看完了ViewModel在Activity中的使用和原理，在Fragment中的实现主要是使用setRetainInstance(true)的方式去保存，跟今天的分析也有关联，分析源码的过程总是看着就有新的问题，再次带着问题去解决会再次有不同的收获，本文的理解也可能有偏差，如有错误和想要交流的也欢迎指正沟通。</strong>  </p>
 
+        
 
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Android/"><i class="fa fa-tag fa-fw"></i>&nbsp;Android</a>
+                
+                    <a href="/tags/Jetpack/"><i class="fa fa-tag fa-fw"></i>&nbsp;Jetpack</a>
+                
+            </div>
+        
+    </section>
+</article>
 
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-    <div class="sidebar-divider"></div>
-
-
-<!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
         </div>
-    </a>
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018-01-11-build-an-image-server/">
+                
+                    Ubuntu搭建Nginx图片服务器
+                
+            </a>
+        </h2>
+        <time>
+            2018-01-11
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/技术栈/">技术栈</a>
     </div>
 
-    <!-- Sidebar Image -->
-    
 
-</aside>
+    </section>
 
-                    
+    <section class="article typo">
+        <p>也许算作是建站以来的第一篇真正意义上的总结博客。  </p>
+<p>首先感谢开源本主题的viosey同学和辛苦维护本主题的neoFelhz同学，对此主题极为喜欢。</p>
+<p>新发现了当前的这个Meterial主题后发现居然有一个Gallery模板可以展示照片，平时的博客使用图片需要存放在一个位置上，平时也有一些业余的摄影爱好需要刚好可以存放，当然可以使用如之前使用过的七牛云等云对象存储平台存储使用，我这里也是刚好有个云服务器可以做存储就想着自己搭建一个图片服务器方便管理，也刚好能学习一下服务器方面的一些知识，经多次尝试，故总结一下,话不多说，开始行动.</p>
+<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><p>Ubuntu版本Ubuntu 16.04.3</p>
+<h1 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h1><p>首先是准备编译Nginx的前期准备工作  </p>
+<h2 id="先更新一下源"><a href="#先更新一下源" class="headerlink" title="先更新一下源"></a>先更新一下源</h2><pre><code>&gt; apt-get update
+</code></pre><h2 id="安装gcc-g-依赖库"><a href="#安装gcc-g-依赖库" class="headerlink" title="安装gcc g++依赖库"></a>安装gcc g++依赖库</h2><pre><code>&gt; apt-get install build-essential
+&gt; apt-get install libtool
+</code></pre><h2 id="安装prce依赖库"><a href="#安装prce依赖库" class="headerlink" title="安装prce依赖库"></a>安装prce依赖库</h2><pre><code>&gt; apt-get install libpcre3 libpcre3-dev
+</code></pre><h2 id="安装-zlib依赖库"><a href="#安装-zlib依赖库" class="headerlink" title="安装 zlib依赖库"></a>安装 zlib依赖库</h2><pre><code>&gt; apt-get install zlib1g-dev
+</code></pre><h2 id="安装-ssl依赖库"><a href="#安装-ssl依赖库" class="headerlink" title="安装 ssl依赖库"></a>安装 ssl依赖库</h2><pre><code>&gt; apt-get install openssl
+</code></pre><h2 id="编译Nginx"><a href="#编译Nginx" class="headerlink" title="编译Nginx"></a>编译Nginx</h2><p>下载<a href="http://nginx.org/en/download.html" target="_blank" rel="external">Nginx</a>有对应的版本，我这里下载是当前的最新版本1.13.8</p>
+<pre><code>&gt; #解压下载下来的压缩包
+&gt; tar -zxvf nginx-1.13.8.tar.gz
+&gt; #进入解压目录
+&gt; cd nginx-1.13.8
+&gt; #配置并生成makefile
+&gt; ./configure --prefix=/usr/local/nginx 
+&gt; #编译
+&gt; make
+&gt; #安装
+&gt; make install
+&gt; #启动Nginx
+&gt; /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+</code></pre><p>此时Nginx就安装完成了，会使用默认的80端口启动，如果有启动apache2服务的这里会用冲突，这里不是重点，可查询解决，启动完成可直接通过服务器ip或者云解析的域名查看默认网页  </p>
+<p>默认的网页长这个样子<br><img src="http://omv6ufghj.bkt.clouddn.com/image6.png" alt="Nginx-default-index"></p>
+<h1 id="安装与配置vsftpd"><a href="#安装与配置vsftpd" class="headerlink" title="安装与配置vsftpd"></a>安装与配置vsftpd</h1><h2 id="安装vsftpd"><a href="#安装vsftpd" class="headerlink" title="安装vsftpd"></a>安装vsftpd</h2><pre><code>&gt; apt-get install vsftpd
+</code></pre><h2 id="启动vsftpd服务"><a href="#启动vsftpd服务" class="headerlink" title="启动vsftpd服务"></a>启动vsftpd服务</h2><pre><code>&gt;service vsftpd start
+</code></pre><h2 id="新建ftpuser目录作为ftp主目录-（ftpuser为目录名，随个人喜好创建）"><a href="#新建ftpuser目录作为ftp主目录-（ftpuser为目录名，随个人喜好创建）" class="headerlink" title="新建ftpuser目录作为ftp主目录 （ftpuser为目录名，随个人喜好创建）"></a>新建ftpuser目录作为ftp主目录 （ftpuser为目录名，随个人喜好创建）</h2><pre><code>&gt;mkdir /home/ftpuser
+</code></pre><h2 id="新建ftpuser用户指定用户主目录和设置用户密码-（ftpuser为用户名，随个人喜好创建）"><a href="#新建ftpuser用户指定用户主目录和设置用户密码-（ftpuser为用户名，随个人喜好创建）" class="headerlink" title="新建ftpuser用户指定用户主目录和设置用户密码 （ftpuser为用户名，随个人喜好创建）"></a>新建ftpuser用户指定用户主目录和设置用户密码 （ftpuser为用户名，随个人喜好创建）</h2><pre><code>&gt;useradd -d /home/ftpuser -s /bin/bash ftpuser
+&gt;passwd ftpuser
+</code></pre><h2 id="制定用户组"><a href="#制定用户组" class="headerlink" title="制定用户组"></a>制定用户组</h2><pre><code>&gt;chown ftpuser:ftpuser /home/ftpuser
+</code></pre><h2 id="新建文件-etc-vsftpd-user-list，用于存放允许访问ftp的用户"><a href="#新建文件-etc-vsftpd-user-list，用于存放允许访问ftp的用户" class="headerlink" title="新建文件/etc/vsftpd.user_list，用于存放允许访问ftp的用户"></a>新建文件/etc/vsftpd.user_list，用于存放允许访问ftp的用户</h2><pre><code>&gt;vim /etc/vsftpd.user_list
+</code></pre><p><img src="http://omv6ufghj.bkt.clouddn.com/image7.png" alt="ftp-user_list"></p>
+<h2 id="编辑vsftpd配置文件"><a href="#编辑vsftpd配置文件" class="headerlink" title="编辑vsftpd配置文件"></a>编辑vsftpd配置文件</h2><pre><code>&gt;vim /etc/vsftpd.conf
+做如下修改：   
+　　打开注释 write_enable=YES   
+　　添加信息 userlist_file=/etc/vsftpd.user_list   
+　　添加信息 userlist_enable=YES   
+　　添加信息 userlist_deny=NO 
+　　修改完成后保存退出。
+</code></pre><h2 id="重启vsftpd服务"><a href="#重启vsftpd服务" class="headerlink" title="重启vsftpd服务"></a>重启vsftpd服务</h2><pre><code>&gt;service vsftpd restart
+</code></pre><p>这是可以使用filezilla等ftp软件使用刚刚新建的用户名和密码访问测试是否成功</p>
+<p>OK，准备工作完成开始上传图片，开始正式图片服务器工作</p>
+<h2 id="创建存储图片的根目录-（在ftpuser目录下-我这里使用www-images）"><a href="#创建存储图片的根目录-（在ftpuser目录下-我这里使用www-images）" class="headerlink" title="创建存储图片的根目录 （在ftpuser目录下,我这里使用www/images）"></a>创建存储图片的根目录 （在ftpuser目录下,我这里使用www/images）</h2><pre><code>&gt;cd /home/ftpuser
+&gt;mkdir -p www/images
+</code></pre><h2 id="在nginx目录下创建images目录"><a href="#在nginx目录下创建images目录" class="headerlink" title="在nginx目录下创建images目录"></a>在nginx目录下创建images目录</h2><pre><code>&gt;mkdir /usr/local/nginx/html/images
+</code></pre><h2 id="修改nginx-conf-nginx-conf在默认的server里再添加一个location并指定实际路径"><a href="#修改nginx-conf-nginx-conf在默认的server里再添加一个location并指定实际路径" class="headerlink" title="修改nginx/conf/nginx.conf在默认的server里再添加一个location并指定实际路径:"></a>修改nginx/conf/nginx.conf在默认的server里再添加一个location并指定实际路径:</h2><pre><code>location /images/ {
+    root  /home/ftpuser/www/;
+    autoindex on;
+}  
+</code></pre><p><img src="http://omv6ufghj.bkt.clouddn.com/image8.png" alt="images_nginx_conf"></p>
+<h2 id="修改用户访问权限"><a href="#修改用户访问权限" class="headerlink" title="修改用户访问权限"></a>修改用户访问权限</h2><pre><code>&gt;chmod 755 /home/ftpuser/www/images
+</code></pre><p>使用filezilla 等ftp工具使用ftpuser用户登录即可上传图片</p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p><img src="http://omv6ufghj.bkt.clouddn.com/image9.png" alt="ftp_upload_test"><br>送上一张最近的长安街慢门效果照片<em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em>。大功告成！ 撒花！<br><img src="http://omv6ufghj.bkt.clouddn.com/image10.png" alt="image_test_result"></p>
 
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
+        
 
-                    
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Linux/"><i class="fa fa-tag fa-fw"></i>&nbsp;Linux</a>
+                
+                    <a href="/tags/Ubuntu/"><i class="fa fa-tag fa-fw"></i>&nbsp;Ubuntu</a>
+                
+                    <a href="/tags/FTP/"><i class="fa fa-tag fa-fw"></i>&nbsp;FTP</a>
+                
+            </div>
+        
+    </section>
+</article>
 
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
+        </div>
     
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018-01-07-Android-Studio-Error-2/">
+                
+                    Android Studio import project 出现Error错误 程序包org.apache.http不存在
+                
+            </a>
+        </h2>
+        <time>
+            2018-01-07
+        </time>
+        
     
-        <a href="https://twitter.com/twitter" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Facebook -->
-    
-        <a href="https://www.facebook.com/facebook" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Google + -->
-    
-        <a href="https://www.google.com/" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Weibo -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-    
-    <!-- V2EX -->
-    
-</div>
+    <div class='cats'>
+        <a href="/categories/错误志/">错误志</a>
+    </div>
 
 
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>ncnom's blog
+    </section>
+
+    <section class="article typo">
+        <p>遇到新的产品形态、样式需求我们经常会在Github搜索开源项目，有些项目是早期Android版本中开发而成，后续Google会有部分API在新版本中的SDK放弃集成，这次我导入一个项目时就遇到这样一个错误</p>
+<p><img src="http://omv6ufghj.bkt.clouddn.com/image4.png" alt="Error Imag"></p>
+<p>如果经历过Android 4.4 时期的同学应该会觉得org.apache.http这个包很熟悉，这里显示错误是因为在targetsdk：23以上版本SDK中已经不再集成此包，如需使用可添加useLibrary “org.apache.http.legacy”依赖即可 。</p>
+<pre><code>apply plugin: &apos;com.android.application&apos;
+android {
+    compileSdkVersion 23
+    buildToolsVersion &quot;23.0.3&quot;
+    useLibrary &quot;org.apache.http.legacy&quot;
+    ...
+}
+</code></pre>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Android/"><i class="fa fa-tag fa-fw"></i>&nbsp;Android</a>
+                
+                    <a href="/tags/IDEError/"><i class="fa fa-tag fa-fw"></i>&nbsp;IDEError</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+</section>
+
+
+
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+    <section class='m_widget author'>
+        
+            <div class='header'>
+                <img class='avatar' src='https://xaoxuu.com/assets/img/avatar.jpg' />
+            </div>
+        
+        <div class='content'>
+            
+                <h2>ncmon&#39; blog</h2>
+            
+            
+                <div>
+                    <i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>
+                    兴趣是最强生产力
+                </div>
             
         </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+        
+            <div class="social-wrapper">
+              
+                
+                    <a href="mailto:me@xaoxuu.com" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-envelope" aria-hidden="true"></i></a>
+                
+              
+                
+                    <a href="https://github.com/xaoxuu" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-github" aria-hidden="true"></i></a>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                    <a href="https://music.163.com/#/user/home?id=63035382" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-music" aria-hidden="true"></i></a>
+                
+              
+                
+                    <a href="atom" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-rss" aria-hidden="true"></i></a>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
             </div>
+        
+    </section>
+
+
+    
+    
+        <section class='m_widget categories'>
+    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    <div class='content'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/技术栈/"><div class='name'>技术栈</div><div class='badge'>3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/错误志/"><div class='name'>错误志</div><div class='badge'>2</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+        
+    <section class='m_widget tagcloud'>
+        <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
+        <div class='content'>
+            <a href="/tags/Android/" style="font-size: 24px; color: #555">Android</a> <a href="/tags/FTP/" style="font-size: 14px; color: #999">FTP</a> <a href="/tags/IDEError/" style="font-size: 19px; color: #777">IDEError</a> <a href="/tags/Jetpack/" style="font-size: 14px; color: #999">Jetpack</a> <a href="/tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="/tags/Ubuntu/" style="font-size: 14px; color: #999">Ubuntu</a>
+        </div>
+    </section>
+
+
+    
+    
+        <section class='m_widget music'>
+    <div class='header'><i class="fa fa-headphones fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;音乐</div>
+    <div class='content'>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="//music.163.com/outchain/player?type=0&id=746319661&auto=0&height=450"></iframe>
+    </div>
+</section>
+
+    
+    
+        <section class='m_widget links'>
+    <div class='header'><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://xaoxuu.com">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;xaoxuu
+                    </div>
+                </a></li>
+            
+            
+
+        </ul>
+
+    </div>
+</section>
+
+    
+    
+        
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="mailto:me@xaoxuu.com" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/xaoxuu" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="https://music.163.com/#/user/home?id=63035382" class="social fa fa-music flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="atom" class="social fa fa-rss flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
         </div>
     
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://github.com/xaoxuu/hexo-theme-material-x" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
 </footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
 
-                    <!-- Import JS File -->
-
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
-
-
-
-    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
-
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+<script src="/js/jquery.fitvids.js"></script>
 
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
 
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
 
 
 
-
-
-
-
-
-
-   
-
-
-
-
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Import prettify js  -->
-
-
-
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-
-    
-    
-</script>
-
-<!-- MathJax Load-->
-
-
-<!-- Bing Background -->
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-<!-- Custom Footer -->
-
-
-
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
-
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
-
-                </main>
-            </div>
-        </body>
-    
-</html>
+    <script>setLoadingBarProgress(100);</script>
+</body>
