@@ -1,0 +1,82 @@
+.info {
+  text-align: center;
+}
+.info .author-avatar {
+  width: 90%;
+  display: block;
+  margin: 1em auto;
+  border: 0.3em solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 1em 0.5em rgba(0,0,0,0.19);
+  transition: 1s ease-in-out;
+}
+.info .author-avatar:hover {
+  transform: rotateY(720deg);
+}
+.info .author-name {
+  color: #26272b;
+  font-size: 1.8em;
+  font-weight: normal;
+  margin: 0.5em 0;
+}
+.info .author-description {
+  color: #444;
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0.5em 0;
+}
+.info .site-count {
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -o-box-orient: horizontal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -o-box-pack: distribute;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -o-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  -o-box-lines: single;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 1em 0;
+  text-align: center;
+  font-size: 1em;
+}
+.info .site-count div {
+  -o-box-flex: 1;
+  box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+.info .site-count .site-count-divider {
+  -o-box-flex: 0;
+  box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  line-height: 1.5em;
+  font-size: 2em;
+}
+.info .site-count .site-count-title {
+  margin: 0;
+  font-size: 1.2em;
+}
+.info .rss {
+  margin: 1em 0;
+  padding: 0;
+}
+.info .rss .rss-link {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  color: #fff;
+  background: #ff2a2a;
+  border: 0.1em solid #f5c6cb;
+  padding: 0.2em;
+  line-height: 1.25em;
+}
