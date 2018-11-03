@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://ncmon.com/"/>
   <updated>2018-10-27T06:02:35.102Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://ncmon.com/</id>
   
   <author>
     <name>ncmon</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Android Jetpack Architecture之ViewModel</title>
-    <link href="http://yoursite.com/post/Jetpack-Architecture-ViewModel/"/>
-    <id>http://yoursite.com/post/Jetpack-Architecture-ViewModel/</id>
+    <link href="http://ncmon.com/post/Jetpack-Architecture-ViewModel/"/>
+    <id>http://ncmon.com/post/Jetpack-Architecture-ViewModel/</id>
     <published>2018-09-26T12:40:11.000Z</published>
     <updated>2018-10-27T06:02:35.102Z</updated>
     
@@ -31,19 +31,19 @@
     
     </summary>
     
-      <category term="技术栈" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="技术栈" scheme="http://ncmon.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="http://ncmon.com/tags/Android/"/>
     
-      <category term="Jetpack" scheme="http://yoursite.com/tags/Jetpack/"/>
+      <category term="Jetpack" scheme="http://ncmon.com/tags/Jetpack/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu搭建Nginx图片服务器</title>
-    <link href="http://yoursite.com/post/build-an-image-server/"/>
-    <id>http://yoursite.com/post/build-an-image-server/</id>
+    <link href="http://ncmon.com/post/build-an-image-server/"/>
+    <id>http://ncmon.com/post/build-an-image-server/</id>
     <published>2018-01-11T12:40:11.000Z</published>
     <updated>2018-10-26T14:54:02.067Z</updated>
     
@@ -57,21 +57,21 @@
     
     </summary>
     
-      <category term="技术栈" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="技术栈" scheme="http://ncmon.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+      <category term="Linux" scheme="http://ncmon.com/tags/Linux/"/>
     
-      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://ncmon.com/tags/Ubuntu/"/>
     
-      <category term="FTP" scheme="http://yoursite.com/tags/FTP/"/>
+      <category term="FTP" scheme="http://ncmon.com/tags/FTP/"/>
     
   </entry>
   
   <entry>
     <title>Android Studio import project 出现Error错误 程序包org.apache.http不存在</title>
-    <link href="http://yoursite.com/post/Android-Studio-Error-2/"/>
-    <id>http://yoursite.com/post/Android-Studio-Error-2/</id>
+    <link href="http://ncmon.com/post/Android-Studio-Error-2/"/>
+    <id>http://ncmon.com/post/Android-Studio-Error-2/</id>
     <published>2018-01-07T15:01:52.000Z</published>
     <updated>2018-10-26T14:53:31.743Z</updated>
     
@@ -87,19 +87,19 @@
     
     </summary>
     
-      <category term="错误志" scheme="http://yoursite.com/categories/%E9%94%99%E8%AF%AF%E5%BF%97/"/>
+      <category term="错误志" scheme="http://ncmon.com/categories/%E9%94%99%E8%AF%AF%E5%BF%97/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="http://ncmon.com/tags/Android/"/>
     
-      <category term="IDEError" scheme="http://yoursite.com/tags/IDEError/"/>
+      <category term="IDEError" scheme="http://ncmon.com/tags/IDEError/"/>
     
   </entry>
   
   <entry>
     <title>RecyclerView排雷--notifyItemRemoved下标（position）不能更新</title>
-    <link href="http://yoursite.com/post/RecyclerView-clear-of-mines-1/"/>
-    <id>http://yoursite.com/post/RecyclerView-clear-of-mines-1/</id>
+    <link href="http://ncmon.com/post/RecyclerView-clear-of-mines-1/"/>
+    <id>http://ncmon.com/post/RecyclerView-clear-of-mines-1/</id>
     <published>2017-10-29T15:48:52.000Z</published>
     <updated>2018-01-07T15:35:18.958Z</updated>
     
@@ -114,15 +114,15 @@
     
     </summary>
     
-      <category term="技术栈" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="技术栈" scheme="http://ncmon.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
   </entry>
   
   <entry>
     <title>Android Studio 更新后出现Error:No service of type Factory  available in ProjectScopeServices.解决办法</title>
-    <link href="http://yoursite.com/post/Android-Studio-Error-1/"/>
-    <id>http://yoursite.com/post/Android-Studio-Error-1/</id>
+    <link href="http://ncmon.com/post/Android-Studio-Error-1/"/>
+    <id>http://ncmon.com/post/Android-Studio-Error-1/</id>
     <published>2017-03-15T17:01:52.000Z</published>
     <updated>2018-10-26T14:53:16.357Z</updated>
     
@@ -137,12 +137,12 @@
     
     </summary>
     
-      <category term="错误志" scheme="http://yoursite.com/categories/%E9%94%99%E8%AF%AF%E5%BF%97/"/>
+      <category term="错误志" scheme="http://ncmon.com/categories/%E9%94%99%E8%AF%AF%E5%BF%97/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="http://ncmon.com/tags/Android/"/>
     
-      <category term="IDEError" scheme="http://yoursite.com/tags/IDEError/"/>
+      <category term="IDEError" scheme="http://ncmon.com/tags/IDEError/"/>
     
   </entry>
   
