@@ -73,16 +73,15 @@
     <link href="http://ncmon.com/post/Android-Studio-Error-2/"/>
     <id>http://ncmon.com/post/Android-Studio-Error-2/</id>
     <published>2018-01-07T15:01:52.000Z</published>
-    <updated>2018-10-26T14:53:31.743Z</updated>
+    <updated>2018-11-18T16:09:19.530Z</updated>
     
-    <content type="html"><![CDATA[<p>遇到新的产品形态、样式需求我们经常会在Github搜索开源项目，有些项目是早期Android版本中开发而成，后续Google会有部分API在新版本中的SDK放弃集成，这次我导入一个项目时就遇到这样一个错误</p><div class="article-img"><p><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image4.png" alt="Error Imag"></p></div><p>如果经历过Android 4.4 时期的同学应该会觉得org.apache.http这个包很熟悉，这里显示错误是因为在targetsdk：23以上版本SDK中已经不再集成此包，如需使用可添加useLibrary “org.apache.http.legacy”依赖即可 。</p><pre><code>apply plugin: &apos;com.android.application&apos;android {    compileSdkVersion 23    buildToolsVersion &quot;23.0.3&quot;    useLibrary &quot;org.apache.http.legacy&quot;    ...}</code></pre>]]></content>
+    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>遇到新的产品形态、样式需求我们经常会在Github搜索开源项目，有些项目是早期Android版本中开发而成，后续Google会有部分API在新版本中的SDK放弃集成，这次我导入一个项目时就遇到这样一个错误</p><div class="article-img"><p><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image4.png" alt="Error Imag"></p></div><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>如果经历过Android 4.4 时期的同学应该会觉得org.apache.http这个包很熟悉，这里显示错误是因为在targetsdk：23以上版本SDK中已经不再集成此包，如需使用可添加useLibrary “org.apache.http.legacy”依赖即可 。</p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></div><div class="line">android &#123;</div><div class="line">   compileSdkVersion <span class="number">23</span></div><div class="line">    buildToolsVersion <span class="string">"23.0.3"</span></div><div class="line">    useLibrary <span class="string">"org.apache.http.legacy"</span></div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;遇到新的产品形态、样式需求我们经常会在Github搜索开源项目，有些项目是早期Android版本中开发而成，后续Google会有部分API在新版本中的SDK放弃集成，这次我导入一个项目时就遇到这样一个错误&lt;/p&gt;
-&lt;div class=&quot;article-img&quot;&gt;&lt;p&gt;&lt;i
+        &lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;遇到新的产品形态、样式需求我们经常会在Github搜索开源项目，有些项目是早期Android版本中开发而成，后续Google
       
     
     </summary>
@@ -101,7 +100,7 @@
     <link href="http://ncmon.com/post/RecyclerView-clear-of-mines-1/"/>
     <id>http://ncmon.com/post/RecyclerView-clear-of-mines-1/</id>
     <published>2017-10-29T15:48:52.000Z</published>
-    <updated>2018-11-09T00:41:33.692Z</updated>
+    <updated>2018-11-09T00:43:47.005Z</updated>
     
     <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>用以显示列表类型的UI我们经常使用ListView，GridView，Google推出RecyclerView之后，大部分的使用均转换到了RecyclerView中，可定制化十分强，但是使用过程中难免碰到一些问题，以前使用ListView多是使用notifyDataSetChanged（）更新数据，使用RecyclerView删除时，为了使用其自身的删除过渡动画使用notifyItemRemoved删除，那么就碰到了一个问题，再onBindViewHolder中设置了setTag（position）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBindViewHolder</span><span class="params">(RecyclerView.ViewHolder holder,<span class="keyword">int</span> position)</span></span>&#123;</div><div class="line">...</div><div class="line">holder.itemView.setTag(position)</div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>直接使用notifyItemRemoved(posiaon)删除会导致该下标不能更新就导致一系列的Bug（/衰）</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>查询到了解决办法特此记录一下:为了修复该问题删除之后需要调用notifyItenRangeChanged方法，使下面的itemview重新onBind:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteItem</span><span class="params">(<span class="keyword">int</span> position)</span></span>&#123;</div><div class="line">  mDataList.remove(position);</div><div class="line">  notifyItemRemoved(position);</div><div class="line">  <span class="keyword">if</span>(position != mDataList.size())&#123; <span class="comment">// 如果移除的是最后一个，忽略</span></div><div class="line">      notifyItemRangeChanged(position, mDataList.size() - position);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>如果不需要使用动画或更改自定义的动画效果可以添加一下代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mRecyclerView.setItemAnimator(newDefaultItemAnimator());</div></pre></td></tr></table></figure></p>]]></content>
     
@@ -124,15 +123,15 @@
     <link href="http://ncmon.com/post/Android-Studio-Error-1/"/>
     <id>http://ncmon.com/post/Android-Studio-Error-1/</id>
     <published>2017-03-15T17:01:52.000Z</published>
-    <updated>2018-10-26T14:53:16.357Z</updated>
+    <updated>2018-11-18T16:09:20.539Z</updated>
     
-    <content type="html"><![CDATA[<p>今天更新Android Studio后 之前能运行的项目出现错误:<br><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image1.png" alt="enter image description here"></p><p>查找到解决方案在此记录<br>是github的 自动化打包插件maven 版本需要更新导致</p><div class="article-img"><p><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image2.png" alt="enter image description here"></p></div><div class="article-img"><p><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image3.png" alt="enter image description here"></p></div>]]></content>
+    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>今天更新Android Studio后 之前能运行的项目出现错误:<br><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image1.png" alt=""></p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>查找到解决方案在此记录一下：<br>是github的 自动化打包插件maven 版本需要更新导致<br><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image2.png" alt=""><br><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image3.png" alt=""></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;今天更新Android Studio后 之前能运行的项目出现错误:&lt;br&gt;&lt;img src=&quot;https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image1.png&quot; alt=&quot;enter image description he
+        &lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;今天更新Android Studio后 之前能运行的项目出现错误:&lt;br&gt;&lt;img src=&quot;https://ncmon-b
       
     
     </summary>

@@ -59,7 +59,7 @@
       <link href="/post/Android-Studio-Error-2/"/>
       <url>/post/Android-Studio-Error-2/</url>
       
-        <content type="html"><![CDATA[<p>遇到新的产品形态、样式需求我们经常会在Github搜索开源项目，有些项目是早期Android版本中开发而成，后续Google会有部分API在新版本中的SDK放弃集成，这次我导入一个项目时就遇到这样一个错误</p><div class="article-img"><p><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image4.png" alt="Error Imag"></p></div><p>如果经历过Android 4.4 时期的同学应该会觉得org.apache.http这个包很熟悉，这里显示错误是因为在targetsdk：23以上版本SDK中已经不再集成此包，如需使用可添加useLibrary “org.apache.http.legacy”依赖即可 。</p><pre><code>apply plugin: &apos;com.android.application&apos;android {    compileSdkVersion 23    buildToolsVersion &quot;23.0.3&quot;    useLibrary &quot;org.apache.http.legacy&quot;    ...}</code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>遇到新的产品形态、样式需求我们经常会在Github搜索开源项目，有些项目是早期Android版本中开发而成，后续Google会有部分API在新版本中的SDK放弃集成，这次我导入一个项目时就遇到这样一个错误</p><div class="article-img"><p><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image4.png" alt="Error Imag"></p></div><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>如果经历过Android 4.4 时期的同学应该会觉得org.apache.http这个包很熟悉，这里显示错误是因为在targetsdk：23以上版本SDK中已经不再集成此包，如需使用可添加useLibrary “org.apache.http.legacy”依赖即可 。</p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">apply <span class="string">plugin:</span> <span class="string">'com.android.application'</span></div><div class="line">android &#123;</div><div class="line">   compileSdkVersion <span class="number">23</span></div><div class="line">    buildToolsVersion <span class="string">"23.0.3"</span></div><div class="line">    useLibrary <span class="string">"org.apache.http.legacy"</span></div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -101,7 +101,7 @@
       <link href="/post/Android-Studio-Error-1/"/>
       <url>/post/Android-Studio-Error-1/</url>
       
-        <content type="html"><![CDATA[<p>今天更新Android Studio后 之前能运行的项目出现错误:<br><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image1.png" alt="enter image description here"></p><p>查找到解决方案在此记录<br>是github的 自动化打包插件maven 版本需要更新导致</p><div class="article-img"><p><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image2.png" alt="enter image description here"></p></div><div class="article-img"><p><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image3.png" alt="enter image description here"></p></div>]]></content>
+        <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>今天更新Android Studio后 之前能运行的项目出现错误:<br><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image1.png" alt=""></p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>查找到解决方案在此记录一下：<br>是github的 自动化打包插件maven 版本需要更新导致<br><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image2.png" alt=""><br><img src="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/image3.png" alt=""></p>]]></content>
       
       
       <categories>
