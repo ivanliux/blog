@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ncmon.com/"/>
-  <updated>2018-10-27T06:02:35.102Z</updated>
+  <updated>2018-11-21T15:31:11.128Z</updated>
   <id>http://ncmon.com/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NestedScrollView嵌套RecyclerView滑动冲突</title>
+    <link href="http://ncmon.com/post/design-clear-of-mines-2/"/>
+    <id>http://ncmon.com/post/design-clear-of-mines-2/</id>
+    <published>2018-11-21T15:09:46.000Z</published>
+    <updated>2018-11-21T15:31:11.128Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Android使用disign 中控件NestedScrollView+RecyclerView嵌套时上下滑动会有明显的阻塞感，显然是遇到了滑动冲突<br><a id="more"></a><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.v4.widget.NestedScrollView</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:fillViewport</span>=<span class="string">"true"</span></div><div class="line">    <span class="attr">app:layout_behavior</span>=<span class="string">"@string/appbar_scrolling_view_behavior"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">android.support.v7.widget.RecyclerView</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/recycler_view"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"2dp"</span></div><div class="line">        <span class="attr">app:layout_constraintTop_toBottomOf</span>=<span class="string">"@id/space1"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.v4.widget.NestedScrollView</span>&gt;</span></div></pre></td></tr></table></figure></p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在XML中 可以对RecyclerView 设置 android:nestedScrollingEnabled=”false”不过这样只支持Android 21以上的版本，<br>对应的设置RecyclerView的属性mRecyclerView.setNestedScrollingEnabled(false)由于是support支持库中的方法即可兼容低版本。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;Android使用disign 中控件NestedScrollView+RecyclerView嵌套时上下滑动会有明显的阻塞感，显然是遇到了滑动冲突&lt;br&gt;
+    
+    </summary>
+    
+      <category term="错误志" scheme="http://ncmon.com/categories/%E9%94%99%E8%AF%AF%E5%BF%97/"/>
+    
+    
+      <category term="Android" scheme="http://ncmon.com/tags/Android/"/>
+    
+      <category term="error" scheme="http://ncmon.com/tags/error/"/>
+    
+      <category term="Design" scheme="http://ncmon.com/tags/Design/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NestedScrollView嵌套ViewPager 显示冲突</title>
+    <link href="http://ncmon.com/post/design-clear-of-mines-1/"/>
+    <id>http://ncmon.com/post/design-clear-of-mines-1/</id>
+    <published>2018-11-21T15:04:11.000Z</published>
+    <updated>2018-11-21T15:30:48.777Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Android使用disign中自带控件CoordinatorLayout+TabLayout+NestedScrollView+ViewPager来实现可折叠头部的也可横下滑动的列表的页面<br>NestedScrollView中嵌套了ViewPager来展示不同的Tab滑动展示，ViewPager显示的高度为0，从AndroidStudio预览页面即可看到。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><a id="more"></a><p>为NestedScrollView设置 android:fillViewport=”true” 解决<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.v4.widget.NestedScrollView</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:fillViewport</span>=<span class="string">"true"</span></div><div class="line">    <span class="attr">app:layout_behavior</span>=<span class="string">"@string/appbar_scrolling_view_behavior"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">android.support.v4.view.ViewPager</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/viewpager"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.v4.widget.NestedScrollView</span>&gt;</span></div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;Android使用disign中自带控件CoordinatorLayout+TabLayout+NestedScrollView+ViewPager来实现可折叠头部的也可横下滑动的列表的页面&lt;br&gt;NestedScrollView中嵌套了ViewPager来展示不同的Tab滑动展示，ViewPager显示的高度为0，从AndroidStudio预览页面即可看到。&lt;/p&gt;
+&lt;h2 id=&quot;解决方案&quot;&gt;&lt;a href=&quot;#解决方案&quot; class=&quot;headerlink&quot; title=&quot;解决方案&quot;&gt;&lt;/a&gt;解决方案&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="错误志" scheme="http://ncmon.com/categories/%E9%94%99%E8%AF%AF%E5%BF%97/"/>
+    
+    
+      <category term="Android" scheme="http://ncmon.com/tags/Android/"/>
+    
+      <category term="error" scheme="http://ncmon.com/tags/error/"/>
+    
+  </entry>
   
   <entry>
     <title>Android Jetpack Architecture之ViewModel</title>
