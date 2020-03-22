@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>关于getDeviceId和getImei获取值不同的分析 - ncnom&#39;s blog</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="http://ncmon.com/post/android-get-imei/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+<meta name="description" content="问题背景需要获取imei的值，很容易查询到使用TelephonyManager的getDeviceId()（在API Level 26 以上已标记为@Deprecated，在很多Android 26以上设备上也可继续使用）方法和getImei()方法（注释标记该方法需在API Level 26 以上调用，不过实测在有些26以下设备也可以调用到）Tips:Android Q 以上获取imei的需要R">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于getDeviceId和getImei获取值不同的分析">
+<meta property="og:url" content="http://ncmon.com/post/android-get-imei/index.html">
+<meta property="og:site_name" content="ncnom's blog">
+<meta property="og:description" content="问题背景需要获取imei的值，很容易查询到使用TelephonyManager的getDeviceId()（在API Level 26 以上已标记为@Deprecated，在很多Android 26以上设备上也可继续使用）方法和getImei()方法（注释标记该方法需在API Level 26 以上调用，不过实测在有些26以下设备也可以调用到）Tips:Android Q 以上获取imei的需要R">
+<meta property="og:image" content="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/avatar.jpg">
+<meta property="og:updated_time" content="2020-03-22T13:39:14.338Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于getDeviceId和getImei获取值不同的分析">
+<meta name="twitter:description" content="问题背景需要获取imei的值，很容易查询到使用TelephonyManager的getDeviceId()（在API Level 26 以上已标记为@Deprecated，在很多Android 26以上设备上也可继续使用）方法和getImei()方法（注释标记该方法需在API Level 26 以上调用，不过实测在有些26以下设备也可以调用到）Tips:Android Q 以上获取imei的需要R">
+<meta name="twitter:image" content="https://ncmon-blog.oss-cn-beijing.aliyuncs.com/avatar.jpg">
+<link rel="alternate" type="application/atom+xml" title="ncnom&#39;s blog" href="/atom.xml">
+<link rel="stylesheet" href="/theme.903fc6ccc5b8e2ad7f98.css">
+<link rel="stylesheet" href="/fonts.e15b7f98c5fa14803416.css">
+<link rel="stylesheet" href="/styles.15f0d614df0a9a578c2c.css">
+<script src="/config.26b56abac797ce016763.js"></script>
+</head>
+<body>
+<is-root></is-root>
+<script src="/runtime.ec2944dd8b20ec099bf3.js"></script>
+<script src="/polyfills.d08f09f49682da52980e.js"></script>
+<script src="/main.0405bb2d6da206e2cbac.en.js"></script></body>
+</html>
